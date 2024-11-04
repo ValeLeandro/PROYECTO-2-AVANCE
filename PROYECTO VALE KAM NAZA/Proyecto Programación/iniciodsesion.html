@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>Kavaleza</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shorttcut icon" href="imagenes/logo-Photoroom.png">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="InyReg.css">
+
+</head>
+
+<body>
+    <header>
+      <!-- inicio del menu -->
+      <nav class="menudesplegable">
+        <div class="nav__container">
+          <!-- botón para abrir el menú -->
+          <a href="#menu" class="nav__menu">
+            <img src="imagenes/menu.svg" class="nav_icon">
+          </a>
+          <!-- botón para cerrar el menú -->
+          <a href="#" class="nav__menu nav__menu--second">
+            <img src="imagenes/close.svg" class="nav_icon">
+          </a>
+          <!-- lista desplegable con enlaces a categorías -->
+          <ul class="dropdown" id="menu">
+            <li class="lista">
+              <a href="blusas.html" class="dropdown__link">
+                <span>Blusas</span>
+              </a>
+            </li>
+            <li class="lista">
+              <a href="pantalones.html" class="dropdown__link">
+                <span>Pantalones</span>
+              </a>
+            </li>
+            <li class="lista">
+              <a href="vestidos.html" class="dropdown__link">
+                <span>Vestidos</span>
+              </a>
+            </li>
+            <li class="lista">
+              <a href="zapatos.html" class="dropdown__link">
+                <span>Zapatos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <!-- título de la página -->
+      <div class="titulo"><h1>KAVALEZA</h1></div>
+  <!-- barra de iconos de navegación -->
+  <nav>
+    <div class="iconos">
+        <ul class="iconos_ul">
+
+            <div class="container_usuario">
+                <li>
+                    <a class="usuario" href="iniciodsesion.html">
+                        <img src="imagenes/usuario (1).png" class="nav_icon" width="35px">
+                    </a>
+                </li>
+            </div>
+<!--Aqui comienza el carrito este es el contenedor-->
+<div class="container-icon">
+<div class="container-cart-icon">
+    <img class="nav_icon" src="imagenes/carrito-de-compras.png" alt="">
+</div>
+<!--Contador de productos seleccionados-->
+<div class="count-products">
+    <div id="contador-productos">0</div>
+</div>
+
+<div class="container-cart-products hidden-cart">
+    <!-- contenedor principal del carrito, inicialmente oculto -->
+    <div class="scrollable-cart">
+    <div class="row-product hidden">
+        <!-- contenedor del producto en el carrito -->
+        <div class="cart-product">
+            
+            <div class="info-cart-product">
+                <!-- información del producto: imagen, título y precio -->
+                <img src="" class="cart-product-image" style="width:50px; height:50px;">
+                <p class="titulo-producto-carrito"></p>
+                <span class="precio-producto-carrito"></span>
+            </div>
+             <!-- icono para eliminar el producto del carrito -->
+            <img class="icon-close" src="imagenes/close.svg" alt="">
+           
+        </div>
+    </div> </div>
+
+    <div class="cart-total hidden">
+        <!-- contenedor para el total del carrito, el hidden es que va a estar inicialmente oculto -->
+        <h3>Total:</h3>
+        <span class="total-pagar"></span>
+
+    </div>
+<!-- mensaje para cuando no hay productos en el carrito -->
+    <p class="cart-empty">El carrito está vacío</p>
+    
+    <!-- botón para iniciar el proceso de compra -->
+    <button type="button" class="boton btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Comprar
+      </button>
+</div>
+
+</div>
+        </ul>
+    </div>
+</nav>
+</header>
+  
+    <!-- imagen de fondo para la sección de inicio de sesión -->
+    <div class="fondoinicio">
+      <img src="imagenes inicio de sesión/ha1.PNG" alt="">
+    </div>
+    <!-- Contenedor principal para la sección de inicio de sesión -->
+    <div class="inicio">
+    <div class="row">
+      <div class="col-12 text-center align-self-center py-5">
+        <!-- Título de la sección de inicio de sesión -->
+        <div class="tituloinicio">
+          <h1>Inicio de Sesión</h1>
+        </div> 
+        <br>
+        <!-- formulario de inicio de sesión -->
+         
+        <form action="" method="post"><!-- Formulario con método POST -->
+          <fieldset>
+            <p>
+              <!-- Etiqueta para el campo de usuario -->
+              <h4>Usuario:</h4>
+              <input type="text" maxlength="40" size="40" placeholder="Usuario">
+              <i class="input-icon uil uil-user"></i>
+            </p>
+            <p>
+              <!-- Etiqueta para el campo de contraseña -->
+              <h4>Contraseña:</h4>
+              <input type="password" maxlength="10" size="40" placeholder="Contraseña">
+              <i class="input-icon uil uil-lock-alt"></i>
+            </p>
+            <br>
+            <p>
+              <!-- Link para acceder -->
+              <a href="Inicio.html" class="btn_Crea">Acceder</a> 
+              <br><br>
+            </p>
+            <div class="block-border"></div>
+          </fieldset>
+        </form>
+        
+   <!-- Sección para crear una cuenta -->
+        <div class="row full-height justify-content-center" centrar>
+          <div class="col-12 text-center align-self-center py-5">
+            <h1>Crea una cuenta</h1>
+            <p>Crea tu cuenta de usuario Kavaleza para disfrutar de beneficios adicionales: <br><br>
+              <img src="imagenes inicio de sesión/estrella (1).png" width="20px" height="20px" alt="">
+              Añade productos a tu lista de favoritos <br>
+              <img src="imagenes inicio de sesión/percha.png" width="20px" height="20px" alt="">
+              Obtener productos exclusivos <br>
+              <img src="imagenes inicio de sesión/caracteristicas.png" width="20px" height="20px" alt="">
+              Revisar y cambiar su información personal <br>
+            </p>
+            <br>
+             <!-- Sección para ir al registro-->
+            <a href="Registro.html" class="btn_Crea">Regístrate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!--pie de pagina-->
+    <footer>
+      <div class="final">
+          <div class="footerlogo">
+              <img src="imagenes/image.png">
+          </div>
+          <!--redes sociales-->
+          <div class="footerredes">
+              <p>Síguenos en nuestras redes sociales</p>
+              <img src="imagenes/instagram (1).png" alt="insta">
+              <img src="imagenes/tik-tok.png" alt="">
+              <img src="imagenes/facebook.png" alt="">
+          </div>
+          <!--links para los terminos-->
+          <div class="footer-terminos">
+             <div><a href="terminos.html">Términos y Condiciones</a></div>
+             <div><a href="politica.html">Política de Privacidad</a></div>
+             
+          </div>
+      </div>
+          <div class="footer-info">
+              <p>&copy; 2024 Kavaleza. Todos los derechos reservados.</p>
+          </div>
+  </footer>
+  </body>
+  
+</html>

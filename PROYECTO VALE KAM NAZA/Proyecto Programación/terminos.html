@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - KAVALEZA</title>
+    <link rel="stylesheet" href="terminos.css">
+    <link rel="shorttcut icon" href="imagenes/logo-Photoroom.png">
+</head>
+<body>
+    <header>
+        <!-- inicio del menu y del header-->
+        <nav class="menudesplegable">
+            <div class="nav__container">
+                <!-- botón para abrir el menú -->
+                <a href="#menu" class="nav__menu">
+                    <img src="imagenes/menu.svg" class="nav_icon">
+                </a>
+                <!-- botón para cerrar el menú -->
+                <a href="#" class="nav__menu nav__menu--second">
+                    <img src="imagenes/close.svg" class="nav_icon">
+                </a>
+                <!-- lista desplegable del menú -->
+                <ul class="dropdown" id="menu">
+                    <li class="lista">
+                        <a href="blusas.html" class="dropdown__link">
+                            <span>Blusas</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="pantalones.html" class="dropdown__link">
+                            <span>Pantalones</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="vestidos.html" class="dropdown__link">
+                            <span>Vestidos</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="zapatos.html" class="dropdown__link">
+                            <span>Zapatos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- título de la tienda -->
+        <div class="titulo"><h1>KAVALEZA</h1></div>
+
+        <!-- barra de iconos de navegación -->
+        <nav>
+            <div class="iconos">
+                <ul class="iconos_ul">
+            
+                    <div class="container_usuario">
+                        <li>
+                            <a class="usuario" href="iniciodsesion.html">
+                                <img src="imagenes/usuario (1).png" class="nav_icon" width="35px">
+                            </a>
+                        </li>
+                    </div>
+                    <!--Aqui comienza el carrito este es el contenedor-->
+                    <div class="container-icon">
+                        <div class="container-cart-icon">
+                            <img class="nav_icon" src="imagenes/carrito-de-compras (2).png" alt="">
+                        </div>
+                        <!--Contador de productos seleccionados-->
+                        <div class="count-products">
+                            <div id="contador-productos">0</div>
+                        </div>
+                        
+                        <div class="container-cart-products hidden-cart">
+                            <!-- contenedor principal del carrito, inicialmente oculto -->
+                        
+                            <div class="row-product hidden">
+                                <!-- contenedor del producto en el carrito -->
+                                <div class="cart-product">
+                                    
+                                    <div class="info-cart-product">
+                                        <!-- información del producto: imagen, título y precio -->
+                                        <img src="" class="cart-product-image" style="width:50px; height:50px;">
+                                        <p class="titulo-producto-carrito"></p>
+                                        <span class="precio-producto-carrito"></span>
+                                    </div>
+                                     <!-- icono para eliminar el producto del carrito -->
+                                    <img class="icon-close" src="imagenes/borrar.png" alt="">
+                                   
+                                </div>
+                            </div>
+                        
+                            <div class="cart-total hidden">
+                                <!-- contenedor para el total del carrito, el hidden es que va a estar inicialmente oculto -->
+                                <h3>Total:</h3>
+                                <span class="total-pagar"></span>
+            
+                            </div>
+                        <!-- mensaje para cuando no hay productos en el carrito -->
+                            <p class="cart-empty">El carrito está vacío</p>
+                            
+                            <!-- botón para iniciar el proceso de compra -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Comprar
+                                
+                            </button>
+                        </div>
+                        
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="terminos">
+        
+            <h1>Términos y Condiciones</h1>
+            <h2>Bienvenido a KAVALEZA</h2>
+        
+        <section>
+            <p>Estos términos y condiciones describen las reglas y regulaciones para el uso del sitio web de KAVALEZA.</p>
+            <p>Al acceder a este sitio web, asumimos que aceptas estos términos y condiciones. No continúes utilizando KAVALEZA si no estás de acuerdo con todos los términos y condiciones establecidos en esta página.</p>
+            
+            <h2>Terminología</h2>
+            <p>La siguiente terminología se aplica a estos Términos y Condiciones, Declaración de Privacidad y Aviso de Descargo de Responsabilidad, y a todos los Acuerdos: "Cliente", "Tú" y "Tu" se refieren a ti, la persona que accede a este sitio web y acepta los términos y condiciones de la Empresa. "La Empresa", "Nosotros", "Nuestro" y "Nos", se refieren a nuestra Empresa. "Parte", "Partes" o "Nosotros", se refiere tanto al Cliente como a nosotros mismos. Todos los términos se refieren a la oferta, aceptación y consideración del pago necesario para llevar a cabo el proceso de nuestra asistencia al Cliente de la manera más apropiada con el propósito expreso de satisfacer las necesidades del Cliente en relación con la provisión de los servicios/productos indicados de la Empresa, de acuerdo con y sujeto a la legislación vigente de [ubicación].</p>
+            
+            <h2>Cookies</h2>
+            <p>Empleamos el uso de cookies. Al acceder a KAVALEZA, aceptaste usar cookies de acuerdo con la Política de Privacidad de KAVALEZA.</p>
+            
+            <h2>Licencia</h2>
+            <p>A menos que se indique lo contrario, KAVALEZA y/o sus licenciantes poseen los derechos de propiedad intelectual de todo el material en KAVALEZA. Todos los derechos de propiedad intelectual están reservados. Puedes acceder a esto desde KAVALEZA para tu uso personal sujeto a las restricciones establecidas en estos términos y condiciones.</p>
+            <ul>
+                <li>No debes republicar material de KAVALEZA</li>
+                <li>No debes vender, alquilar o sublicenciar material de KAVALEZA</li>
+                <li>No debes reproducir, duplicar o copiar material de KAVALEZA</li>
+                <li>No debes redistribuir contenido de KAVALEZA</li>
+            </ul>
+            
+            <h2>Comentarios y Reseñas</h2>
+            <p>Partes de este sitio web ofrecen la oportunidad a los usuarios de publicar y intercambiar opiniones e información en ciertas áreas del sitio. KAVALEZA no filtra, edita, publica ni revisa los comentarios antes de su presencia en el sitio web. Los comentarios no reflejan las opiniones y puntos de vista de KAVALEZA, sus agentes y/o afiliados. Los comentarios reflejan los puntos de vista y opiniones de la persona que publica sus puntos de vista y opiniones.</p>
+            <p>KAVALEZA se reserva el derecho de monitorear todos los comentarios y eliminar cualquiera que pueda considerarse inapropiado, ofensivo o que cause una violación de estos Términos y Condiciones.</p>
+            
+            <h2>Política de Envío y Devoluciones</h2>
+            <h3>Envío</h3>
+            <p>KAVALEZA se compromete a entregar los productos en perfecto estado en la dirección que tú indiques en el formulario de pedido. Puedes pedir la entrega de los artículos en otro domicilio y a otra persona física distinta de la que suscribe el pedido. No se entregarán pedidos en apartados de correos.</p>
+            <h3>Devoluciones</h3>
+            <p>Si por alguna razón no quedas satisfecho con tu compra, puedes devolver los artículos en un plazo de [número] días desde la fecha de recepción del pedido. Los productos deben estar en perfectas condiciones, sin usar y con las etiquetas originales. Los gastos de envío y devolución correrán a cargo del cliente.</p>
+            
+            <h2>Política de Privacidad</h2>
+            <p>Tu privacidad es muy importante para nosotros. Por favor, revisa nuestra <a href="politica.html">Política de Privacidad</a> para entender nuestras prácticas de recolección, uso y divulgación de tu información personal.</p>
+            
+            <h2>Limitación de Responsabilidad</h2>
+            <p>KAVALEZA no será responsable de ninguna pérdida o daño de cualquier naturaleza en la medida en que esto sea causado por el uso de este sitio web o la confianza en la información proporcionada en este sitio web.</p>
+            
+            <h2>Cambios a los Términos y Condiciones</h2>
+            <p>KAVALEZA se reserva el derecho de realizar cambios en estos términos y condiciones en cualquier momento. Las modificaciones se publicarán en esta página y entrarán en vigor de inmediato. Al continuar utilizando el sitio web después de que se hayan realizado las modificaciones, aceptas los nuevos términos y condiciones.</p>
+            
+            <h2>Contacto</h2>
+            <p>Si tienes alguna pregunta sobre estos términos y condiciones, por favor, contáctanos en kavaleza@gmail.com
+    </div>
+    <!--pie de pagina-->
+    <footer>
+        <div class="final">
+            <div class="footerlogo">
+                <img src="imagenes/image.png">
+            </div>
+            <!--redes sociales-->
+            <div class="footerredes">
+                <p>Síguenos en nuestras redes sociales</p>
+                <img src="imagenes/instagram (1).png" alt="insta">
+                <img src="imagenes/tik-tok.png" alt="">
+                <img src="imagenes/facebook.png" alt="">
+            </div>
+            <!--links para los terminos-->
+            <div class="footer-terminos">
+               <div><a href="terminos.html">Términos y Condiciones</a></div>
+               <div><a href="politica.html">Política de Privacidad</a></div>
+               
+            </div>
+        </div>
+            <div class="footer-info">
+                <p>&copy; 2024 Kavaleza. Todos los derechos reservados.</p>
+            </div>
+    </footer>
+</body>
+</html>

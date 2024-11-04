@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestidos KAVALEZA</title>
+    <link rel="stylesheet" href="vestidos.css">
+    <link rel="shorttcut icon" href="imagenes/logo-Photoroom.png">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="bootstrap.js"></script>
+    <script src="datos.js"></script>
+    <script src="ejemplo.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <header>
+        <!-- inicio del menu y del header-->
+        <nav class="menudesplegable">
+            <div class="nav__container">
+                <!-- botón para abrir el menú -->
+                <a href="#menu" class="nav__menu">
+                    <img src="imagenes/menu.svg" class="nav_icon">
+                </a>
+                <!-- botón para cerrar el menú -->
+                <a href="#" class="nav__menu nav__menu--second">
+                    <img src="imagenes/close.svg" class="nav_icon">
+                </a>
+                <!-- lista desplegable del menú -->
+                <ul class="dropdown" id="menu">
+                    <li class="lista">
+                        <a href="blusas.html" class="dropdown__link">
+                            <span>Blusas</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="pantalones.html" class="dropdown__link">
+                            <span>Pantalones</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="vestidos.html" class="dropdown__link">
+                            <span>Vestidos</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="zapatos.html" class="dropdown__link">
+                            <span>Zapatos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- título de la tienda -->
+        <div class="titulo"><h1>KAVALEZA</h1></div>
+
+        <!-- barra de iconos de navegación -->
+        <nav>
+            <div class="iconos">
+                <ul class="iconos_ul">
+                    
+                    <div class="container_usuario">
+                        <li>
+                            <a class="usuario" href="iniciodsesion.html">
+                                <img src="imagenes/usuario (1).png" class="nav_icon" width="35px">
+                            </a>
+                        </li>
+                    </div>
+                    <!--Aqui comienza el carrito este es el contenedor-->
+    <div class="container-icon">
+        <div class="container-cart-icon">
+            <img class="nav_icon" src="imagenes/carrito-de-compras.png" alt="">
+        </div>
+        <!--Contador de productos seleccionados-->
+        <div class="count-products">
+            <div id="contador-productos">0</div>
+        </div>
+        
+        <div class="container-cart-products hidden-cart">
+            <!-- contenedor principal del carrito, inicialmente oculto -->
+            <div class="scrollable-cart">
+            <div class="row-product hidden">
+                <!-- contenedor del producto en el carrito -->
+                <div class="cart-product">
+                    
+                    <div class="info-cart-product">
+                        <!-- información del producto: imagen, título y precio -->
+                        <img src="" class="cart-product-image" style="width:50px; height:50px;">
+                        <p class="titulo-producto-carrito"></p>
+                        <span class="precio-producto-carrito"></span>
+                    </div>
+                     <!-- icono para eliminar el producto del carrito -->
+                    <img class="icon-close" src="imagenes/close.svg" alt="">
+                   
+                </div>
+            </div> </div>
+        
+            <div class="cart-total hidden">
+                <!-- contenedor para el total del carrito, el hidden es que va a estar inicialmente oculto -->
+                <h3>Total:</h3>
+                <span class="total-pagar"></span>
+
+            </div>
+        <!-- mensaje para cuando no hay productos en el carrito -->
+            <p class="cart-empty">El carrito está vacío</p>
+            
+            <!-- botón para iniciar el proceso de compra -->
+            <button type="button" class="boton btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Comprar
+              </button>
+        </div>
+        
+    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="hero">
+        <div class="Verano">
+            <h1>VESTIDOS</h1>
+            <p>"El vestido debe seguir el cuerpo de la mujer, <br> no el cuerpo la forma del vestido". <br> –Hubert de Givenchy</p>
+        </div>
+        <section class="sect">
+            <video src="imagenes objetos\overlay.mp4" poster="Verano" autoplay loop muted="true">
+                <h1>zona con video</h1>
+            </video>
+            <div class="capa"></div>
+    </main> <br> <br> <br>
+    <!--Inicio catalogo -->
+    <div class="Catalogo">
+        <H1>Explore nuestra colección</H1>
+    </div>
+        <div class="container-products">
+            <script>armarProductosCat('vestidos');</script>
+        </div>
+        <footer>
+            <div class="final">
+                <div class="footerlogo">
+                    <img src="imagenes/image.png">
+                </div>
+                <!--redes sociales-->
+                <div class="footerredes">
+                    <p>Síguenos en nuestras redes sociales</p>
+                    <img src="imagenes/instagram (1).png" alt="insta">
+                    <img src="imagenes/tik-tok.png" alt="">
+                    <img src="imagenes/facebook.png" alt="">
+                </div>
+                <!--links para los terminos-->
+                <div class="footer-terminos">
+                   <div><a href="terminos.html">Términos y Condiciones</a></div>
+                   <div><a href="politica.html">Política de Privacidad</a></div>
+                   
+                </div>
+            </div>
+                <div class="footer-info">
+                    <p>&copy; 2024 Kavaleza. Todos los derechos reservados.</p>
+                </div>
+        </footer>
+        <!--Este es un modal de librería de códico de Bootstrap-->
+    <div class="modal fade" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog modal-xl"><!--Modal bastante grande-->
+          <div class="modal-content">
+            <!--Header del modal-->
+            <div class="modal-header">
+              <div class="h1modal"><h1 class="modal-title fs-5" id="exampleModalLabel">Método de Pago</h1></div>
+              <img src="imagenes/close.svg"class="nav_icon" data-bs-dismiss="modal"  alt="">
+            </div>
+            <div class="modal-body">
+                <!--Aquí saldrá los productos que el cliente va a compra y el total-->
+              <div class="Resumen">
+                <!--Aquí aparecerá la info de productos-->
+                <div class="tituloresumen"><h4>Productos</h4></div><hr>
+                  <div class="row-product2">
+                      
+                  </div>
+                  <!--Total de la compra-->
+                  <div class="cart-total2">
+                      <h3>Total:</h3><hr>
+                      <span class="total-pagar2"></span>
+                  </div><hr>
+              </div>
+              <div class="Pago">
+                  
+                  <hr>
+                  <!--Este es el formulario para poner la direccion de entrega-->
+                  <form id="hora-de-pagar-marce">
+                      
+                      <div class="entrega">
+                          <h3>Información de Entrega</h3><br>
+                          <label for="nombre">Nombre Completo:</label><br>
+                          <input type="text" id="nombre" class="texto2" required><hr>
+          
+                          <label for="direccion">Dirección de Entrega:</label><br>
+                          <input type="text" id="direccion" class="texto2" required><hr>
+          
+                          <label for="ciudad">Ciudad:</label><br>
+                          <input type="text" id="ciudad" class="texto2" required><hr>
+          
+                          <label for="pais">País:</label><br>
+                          <input type="text" id="pais" class="texto2" required><hr>
+                      </div>
+                      
+                      <hr>
+                      <!--Este es el formulario para poner la información de la tarjeta-->
+                      <div class="pago">
+                          <h3>Información de Pago</h3>
+                          <label for="numero-tarjeta">Número de Tarjeta:</label><br>
+                          <input type="text" id="numero-tarjeta" class="texto2" placeholder="6298 6298 6298 6298" required><hr>
+          
+                          <label for="fecha-expiracion">Fecha de Expiración:</label><br>
+                          <input type="text" id="fecha-expiracion" class="texto2" placeholder="MM/AA" required><hr>
+          
+                          <label for="cvv">CVV:</label><br>
+                          <input type="text" id="cvv" class="texto2" placeholder="629"  max="3" required><hr>
+                      </div>
+          
+          
+                      <hr>
+                      <!--Tarjetas-->
+                      <div class="tarjetas">
+                          <h4>Tarjetas Aceptadas</h4>
+                          <img class="imagen-tarjetas" src="imagenes/tarjetas.webp" alt="">
+                      </div>
+          
+      
+                  </form>
+              </div>
+            </div>
+            <!--Botones, el de pagar y el de cerrar el modal-->
+            <div class="modal-footer">
+              <button type="button" class="btn1 btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
+              <button type="button" onclick="validarFormulario()" class="btn2 btn-primary">Pagar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+        <script src="carrito.js"></script>
+    </body>
+    
+    </html>

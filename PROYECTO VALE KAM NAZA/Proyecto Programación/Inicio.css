@@ -1,0 +1,724 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: z;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+header{
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(3, 27, 12); 
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+.titulo{
+    width: 100%;
+    margin-left: 140px;
+    font-size: 22px;
+    color: bisque;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    grid-area: title;
+    justify-content: center;
+}
+/**/
+.iconos ul{
+    align-items: center;
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-right: 30px
+}
+
+.capa, .capa2{
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 550px;
+    background-color: rgb(3, 27, 12);
+    mix-blend-mode: overlay;
+    opacity: 0.8;
+    z-index: 5;
+}
+
+.botondescubrir, .botondescubrir2{
+    display: inline-block;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    width: 100px;
+    background-color: rgb(3, 27, 12);
+    font-size: 1.4rem;
+    color: white;
+    z-index: 5;
+}
+
+.cate{
+    width: 100%;
+    height: 0px;
+    margin-top: -30px;
+    background-color: rgb(3, 27, 12); 
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.categorias{
+    display: flex;
+    gap: 25px;
+    font-size: 25px;
+    list-style: none;
+    font-style: oblique;
+}
+.categorias li a{
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    
+}
+.categorias li a{
+
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.categorias li a:hover:after{
+    border-bottom: 5px solid bisque;
+    color: bisque;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.menudesplegable{
+    --img1: scale(1);
+    --img2: scale(0);
+    z-index: 12;
+}
+
+.menudesplegable:has( .dropdown:target ){
+    --img1: scale(0);
+    --img2: scale(1);
+    --clip:inset(0 0 0 0);
+    z-index: 14;
+}
+
+.nav__container{
+    width: 100%;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-areas: "title img";
+    align-items: center;
+    overflow: hidden;
+}
+
+.nav__menu{
+    grid-area: img;
+    position: relative;
+    z-index: 10;
+    transform: var(--img1);
+}
+
+.nav__menu--second{
+    transform: var(--img2);
+}
+
+.nav_icon{
+    width: 35px;
+    display: block;
+}
+.container_usuario, .container_megusta, .container_carrito{
+    position: relative;
+}
+.container_usuario .nav_icon:hover{
+    overflow: hidden;
+}
+.container_megusta .nav_icon:hover{
+    overflow: hidden;
+}
+.container_carrito  .nav_icon:hover{
+    overflow: hidden;
+}
+.container_usuario:hover .nav_icon {
+    content: url(imagenes/usuario.png);
+}
+.container_megusta:hover .nav_icon {
+    content: url(imagenes/corazon.png);
+}
+.container_carrito:hover .nav_icon {
+    content: url(imagenes/carrito-de-compras\ \(1\).png);
+}
+.dropdown{
+    position: absolute;
+    align-items: center;
+    background-color: #0c1d12;
+    margin-top: 280px;
+    margin-left: 50px;
+    width: 100%;
+    height: 350px;
+    max-width: 300px;
+    display: grid;
+    clip-path: var(--clip, inset(0 0 100% 100%));
+    transition: clip-path .5s;
+    z-index: 10;
+}
+
+.lista{
+    list-style: none;
+    height: 40px;
+}
+
+.dropdown__link{
+    color: rgb(184, 187, 191);
+    padding: 10px;
+    width: 100px;
+    text-decoration: none; 
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    background-color: var(--bg, transparent);
+}
+.dropdown__link:hover{
+    background-color: beige;
+    color: #000;
+}
+
+/* Tarjetitas con animaciones y frases*/
+
+.imagenesproductos{
+    position: relative;
+    margin-top: 100px;
+    background-color: bisque;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 10px 7px 10px rgb(0,0,0,0.5);
+}
+
+.imagen1, .imagen2, .imagen3{
+    width: 300px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0px 7px 10px rgb(0,0,0,0.5);
+    transition: 0.5s ease-in-out;
+}
+.imagen1:hover{
+    transform: translateY(20px);
+}
+.imagen2:hover{
+    transform: translateY(20px);
+}
+.imagen3:hover{
+    transform: translateY(20px);
+}
+.imagen1:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(65, 165, 102,0.1), rgba(24, 63, 38, 1));
+    z-index: 6;
+    transition: 0.5s all;
+    opacity: 0;
+}
+.imagen1:hover:before{
+    opacity: 1;
+}
+.imagen2:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(65, 165, 102,0.1), rgba(24, 63, 38, 1));
+    z-index: 6;
+    transition: 0.5s all;
+    opacity: 0;
+}
+.imagen2:hover:before{
+    opacity: 1;
+}
+.imagen3:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(65, 165, 102,0.1), rgba(24, 63, 38, 1));
+    z-index: 6;
+    transition: 0.5s all;
+    opacity: 0;
+}
+.imagen3:hover:before{
+    opacity: 1;
+}
+.imagenesproductos img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* las frases de las tarjetitas */
+
+.carta{
+    position: absolute;
+    z-index: 7;
+    text-align: center;
+    opacity: 0;
+    border-radius: 8px;
+    font-size: 20px;
+    background-color: #183f26;
+    color: white;
+    transform: translateY(30px);
+    transition: 0.5s all;
+}
+.carta2{
+    position: absolute;
+    z-index: 7;
+    text-align: center;
+    opacity: 0;
+    border-radius: 8px;
+    font-size: 20px;
+    color: white;
+    transform: translateY(30px);
+    transition: 0.5s all;
+}
+.carta3{
+    position: absolute;
+    z-index: 7;
+    text-align: center;
+    opacity: 0;
+    border-radius: 8px;
+    font-size: 20px;
+    color: white;
+    transform: translateY(30px);
+    transition: 0.5s all;
+}
+.imagen1:hover .carta{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.imagen2:hover .carta2{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.imagen3:hover .carta3{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.imagenesproductos p{
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-bottom: 60px;
+}
+/* video */
+
+.contenedorvideo{
+    position: relative;
+    margin-top: 100px;
+    height: 500px;
+    width: 100%;
+    background-color: bisque;
+    box-shadow: 0px 7px 10px rgb(0,0,0,0.5);
+}
+.video2{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 450px;
+    object-fit: cover;
+    margin-left: 15%;
+    box-shadow: 0px 7px 10px rgb(0,0,0,0.5);
+}
+
+/* aqui comienza el footer */
+
+footer {
+    color: white;
+    text-align: center;
+}
+
+.final{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #306f44;
+    color: white;
+}
+.footer-terminos{
+    height: 100px;
+    width: 100%;
+    gap: 20px;
+}
+.footer-terminos a {
+    margin: 0;
+    display: inline-block;
+    text-decoration: none;
+    list-style: none;
+    color: #0c1d12;
+}
+
+.footer-info {
+    width: 100%;
+    height: 100px;
+    font-size: 14px;
+    background-color: rgb(3, 27, 12);
+}
+/* imagenes de redes sociales */
+
+.footerredes img{
+    width: 50px;
+    height: 40px;
+}
+
+
+/* estilos del contador de productos*/
+.count-products{
+    position: absolute;
+    top: 55%;
+    right: 50px;
+    background-color: #000;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+/* estilos del contenedor del contador de productos*/
+#contador-productos{
+    font-size: 12px;
+    background-color: #000;
+}
+/* estilos del contenedor del carrito de productos */
+.container-cart-products{
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: #0c1d12;
+    width: 650px;
+    z-index: 150;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+    color: white;
+    overflow-y: auto;
+}
+.scrollable-cart {
+    max-height: 400px;
+    overflow-y: auto;  
+    border: 1px solid #153828; 
+}
+/* estilos del producto en el carrito */
+.cart-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    max-height: 200px; /* Altura máxima para el contenedor de productos */
+    overflow-y: auto;
+}
+/* info del producto en el carrito */
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+/* titulo del producto en el carrito */
+.titulo-producto-carrito{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*precio del producto en el carrito */
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* cantidad del producto en el carrito */
+.cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* icono para borrar un producto en el carrito */
+.icon-close{
+    width: 25px;
+    height: 25px;
+}
+.imgcarrito{
+    width: 40px;
+    height: 40px;
+}
+/* estilos del botón del carrito */
+.btnCart {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    background-color: #15552c;
+    color: #fff;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+}
+
+/* efecto de hover en el botón del carrito */
+.btnCart:hover {
+    background-color: #40a678;
+}
+
+/* estilos del total del carrito */
+.cart-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+/* estilos del encabezado en el total del carrito */
+.cart-total h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* estilos del total a pagar */
+.total-pagar {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+/* ocultar el carrito */
+.hidden-cart {
+    display: none;
+}
+
+/* estilos del mensaje cuando el carrito está vacío */
+.cart-empty {
+    padding: 20px;
+    text-align: center;
+}
+
+/* estilos de los botones 1 y 2 */
+.btn1, .btn2 {
+    padding: 10px 25px;
+    background-color: #15552c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+/* efecto de hover en los botones 1 y 2 */
+.btn2:hover, .btn1:hover {
+    background-color: #153828;
+}
+
+/* clase para ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* estilos del título en el modal */
+.h1modal {
+    text-align: center;
+    width: 100%;
+}
+
+/* estilos del resumen de lo que se está pagando */
+.Resumen {
+    border: #0c1d12;
+    max-width: 500px;
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.modal-body {
+    padding: 20px;
+}
+
+.Resumen {
+    margin-bottom: 30px;
+}
+
+.Resumen h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.tituloresumen{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    color: #153828;
+}
+
+/* estilos de la fila de productos en el resumen*/
+.row-product2 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.row-product2 .cart-product {
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* estilos de la imagen del producto en el carrito */
+.cart-product img {
+    margin-right: 10px;
+}
+
+/* estilos del total en la fila del resumen del carrito cuando ya le diste comprar */
+.cart-total2 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* estilos del botón de alerta */
+.alertbutton {
+    background-color: #153828; 
+    color: white;             
+}
+
+/* efecto de hover en el botón de alerta */
+.alertbutton:hover {
+    background-color: #0c1d12;
+}
+
+/* estilos del pago, esto saldrá dentro del modal de Bootstrap */
+.Pago {
+    max-width: 650px;
+    margin: 0 auto;
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* estilos de los encabezados en el pago */
+.Pago h2, h3 {
+    text-align: center;
+    color: #0c1d12; 
+    font-size: 35px;
+    font-family: 'Dancing Script', cursive; 
+}
+
+/* estilos del encabezado en la tarjeta del producto */
+.content-card-product h3 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* estilos para entrega y pago */
+.entrega, .pago {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* estilos de las etiquetas */
+label {
+    display: block;
+    margin-bottom: 3px;
+    color: #153828; 
+}
+
+/* estilos del encabezado */
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* estilos del campo de texto */
+.texto2 {
+    width: 500px;
+    padding: 7px;
+    margin-bottom: 5px;
+    border: 2px solid #0c1d12; 
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+/* estilos para el contenedor de tarjetas */
+.tarjetas {
+    text-align: center;
+    border: 2px solid #0c1d12; 
+    margin-bottom: 30px;
+}
+
+/* estilos de las imágenes de las tarjetas */
+.imagen-tarjetas {
+    max-width: 200px;
+    height: auto;
+}
+
+/* estilos de la línea horizontal */
+hr {
+    color: #0a0906;
+}
+
+/* estilos del icono de cerrar */
+.icon-close img {
+    height: 30px;
+    width: 30px;
+}
+
+/* estilos del botón de comprar*/
+.boton {
+    width: 100%;
+    padding: 15px;
+    background-color: #153828; 
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* efecto de hover en el botón */
+.boton:hover {
+    background-color: #306f44; 
+}
