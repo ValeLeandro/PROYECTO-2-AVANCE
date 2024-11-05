@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <script src="inicio.js"></script>
 
 </head>
 
@@ -144,21 +145,20 @@
             <p>
               <!-- Etiqueta para el campo de usuario -->
               <h4>Usuario:</h4>
-              <input type="text" maxlength="40" size="40" placeholder="Usuario">
+              <input type="text" id="usuario" maxlength="40" size="40" placeholder="Usuario">
               <i class="input-icon uil uil-user"></i>
             </p>
             <p>
               <!-- Etiqueta para el campo de contraseña -->
               <h4>Contraseña:</h4>
-              <input type="password" maxlength="10" size="40" placeholder="Contraseña">
+              <input type="password" id="contraseña" maxlength="10" size="40" placeholder="Contraseña">
               <i class="input-icon uil uil-lock-alt"></i>
             </p>
             <br>
-            <p>
-              <!-- Link para acceder -->
-              <a href="Inicio.html" class="btn_Crea">Acceder</a> 
-              <br><br>
-            </p>
+       <!-- Link para acceder -->
+       <button type="button" class="btn_Crea" onclick="validarFormulario()">Acceder</button>
+
+
             <div class="block-border"></div>
           </fieldset>
         </form>
