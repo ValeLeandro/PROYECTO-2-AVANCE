@@ -129,80 +129,6 @@ function armarProducto() {
   document.write(html); // Escribe el HTML en el documento
 }
 
-// Función para agregar un producto al carrito
-
-function addCart(id) {
-  console.log(cart);
-
-  var nuevo = true; // Esto es como que asume que el producto es nuevo
-
-  // Recorre el carrito para verificar si el producto ya existe
-  for (var i = 0; i < cart.length; i++) {
-    if (cart[i][0] == id) {
-      // Si el ID ya existe en el carrito entonces pues el producto no es nuevo kklsj
-      console.log(cart[i][5]);
-      nuevo = false;
-      cart[i][5] = cart[i][5] + 1; // Incrementa la cantidad del producto
-    }
-  }
-
-  // Si el producto es nuevo, se extraen tipo sus datos y se añade al carrito
-  if (nuevo) {
-    var id = productos[getIndex(id)][0];
-    var imagen = productos[getIndex(id)][1];
-    var descuento = productos[getIndex(id)][2];
-    var titulo = productos[getIndex(id)][3];
-    var precio = productos[getIndex(id)][4];
-    var cantidad = 1;
-
-    // Añade el producto al carrito
-    cart.push([id, imagen, descuento, titulo, precio, cantidad]);
-  }
-
-  // Muestra una alerta de éxito
-  Swal.fire({
-    title: "Agregaste un producto al carrito!",
-    text: "Sigue comprando en KAVALEZA!",
-    customClass: {
-      confirmButton: "alertbutton",
-    },
-  });
-
-  showHTML(); // Muestra el contenido del carrito
-  console.log(cart);
-}
-
-// Función para obtener el índice de un producto de los productos
-
-function getIndex(id) {
-  var result = -1; 
-  for (var i = 0; i < productos.length; i++) {
-    if (productos[i][0] == id) {
-      // Si se encuentra el ID
-      result = i; // Guarda el índice
-      break; // Sale del bucle
-    }
-  }
-  return result; // Devuelve el índice encontrado
-}
-
-// Función para eliminar un producto del carrito
-
-function removeCart(id) {
-  console.log(cart);
-
-  var cart2 = new Array();
-
-  for (var i = 0; i < cart.length; i++) {
-    if (cart[i][0] != id) {
-      cart2.push(cart[i]);
-    }
-  }
-
-  cart = cart2; // Actualiza el carrito
-  console.log(cart); // Esto es una prueba
-  showHTML(); // Muestra el contenido actualizado del carrito
-}
 
 // Función para armar todos los productos en en html del catalogo
 function armarProductos() {
@@ -239,3 +165,54 @@ function armarProductos() {
 
   document.write(html); // Escribe el HTML en el documento
 }
+
+
+function mostrarProductosAleatorios() {
+  // Creamos un arreglo para almacenar los productos seleccionados aleatoriamente
+  const productosAleatorios = [];
+  
+  // Generamos 3 IDs aleatorios únicos
+
+  while (productosAleatorios.length < 3) {
+    const idAleatorio = Math.floor(Math.random() * 48) + 1; //Esto es porque tenemos 48 productos entones hacemos que escoga un numero random entre esos entre 1 y 48
+    // Verificamos que no se repitan los productos seleccionados
+    if (!productosAleatorios.includes(idAleatorio)) {
+      productosAleatorios.push(idAleatorio);
+    }
+  }
+
+  // Buscamos los productos correspondientes a los IDs aleatorios
+  const productosSeleccionados = productosAleatorios.map(id => {
+    return productos.find(producto => producto[0] === id);
+  });
+
+  // Creamos el HTML para mostrar los productos seleccionados
+  let html = "";
+  productosSeleccionados.forEach(producto => {
+    if (producto) {
+      html += `
+        <div class="pro">
+          <a href="producto.html?id=${producto[0]}">
+            <div class="card-product">
+              <div class="container-img">
+                <img class="imgPro" src="${producto[1]}" alt="${producto[3]}" />
+                <span class="discount">${producto[2]}</span>
+              </div>
+              </a>
+              
+              <div class="content-card-product">
+                <h3>${producto[3]}</h3>
+                <p class="price">$${producto[4]}</p>
+                <img id="imgcarrito" onclick="addCart(${producto[0]})" src="imagenes objetos/icons8-carrito-de-compras-48.png" alt="Agregar al carrito">
+              </div>
+            </div>
+        
+        </div>
+      `;
+    }
+  });
+
+  // Insertamos los productos aleatorios en el contenedor correspondiente
+  document.querySelector(".productos-aleatorios").innerHTML = html;
+}
+

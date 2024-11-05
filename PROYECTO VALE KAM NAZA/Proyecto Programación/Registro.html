@@ -11,8 +11,9 @@
     <link rel="shorttcut icon" href="imagenes/logo-Photoroom.png">
     <link rel="stylesheet" href="InyReg.css">
     <script src="datos.js"></script>
-    <script src="ejemplo.js"></script>
-
+    <script src="info.js"></script>
+    <script src="inicio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  
 </head>
 <body>
@@ -124,39 +125,43 @@
     <img src="imagenes inicio de sesión//holis.PNG" alt="">
   </div>
   <!-- Contenedor para el formulario de creación de cuenta -->
-<div class="formulario2">
+  <div class="formulario2">
     <div class="row"> 
-    <div class="col-12 text-center align-self-center py-5">
+      <div class="col-12 text-center align-self-center py-5">
         <!-- Título de la sección de creación de cuenta -->
-     <strong> <h1> Cree una Cuenta</h1></strong> <br>
-      <h4>Gracias por completar los siguientes campos para crear su cuenta de usuario de Kavaleza.</h4>
-    <form action="" method= "post"> 
-    <fieldset>
- <!-- Campo para el nombre completo -->
-<p>
-  <input type="text" maxlength="40" size="40" id="h"placeholder="Nombre Completo" >
-  <i class="input-icon uil uil-user"></i>
+        <strong> <h1> Cree una Cuenta de KAVALEZA</h1></strong> <br>
+        <form id="formularioRegistro" action="" method="post"> 
+          <fieldset>
+            <!-- Campo para el nombre completo -->
+            <p>
+              <input type="text" maxlength="40" size="40" id="nombreCompleto" placeholder="Nombre Completo">
+              <i class="input-icon uil uil-user"></i>
+            </p>
+            <!-- Campo para el número celular -->
+            <p>
+              <input type="tel" maxlength="40" size="40" id="numeroCelular" placeholder="Número Celular">
+              <i class="input-icon uil uil-phone"></i>
+            </p>
+            <!-- Campo para el email -->
+            <p>
+              <input type="email" maxlength="40" size="40" id="email" placeholder="Email">
+              <i class="input-icon uil uil-at"></i>
+            </p>
+            <!-- Campo para la contraseña -->
+            <p>
+              <input type="password" maxlength="8" size="40" id="contraseña" placeholder="Contraseña">
+              <i class="input-icon uil uil-lock-alt"></i>
+              <p><h6>6 caracteres | 1 letra mayúscula | 1 letra minúscula | 1 número </h6></p>
+            </p>
+            <br>
+            <!-- Botón de registrar que ejecuta la validación -->
+            <button type="button" class="btn_Crea" onclick="validarFormulario2()">Registrar</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
   
-</p>
- <!-- Campo para el numero celular -->
-<p>
-    <input type="tel" maxlength="40" size="40" id="h"placeholder="Numero Celular" >
-    <i class="input-icon uil uil-phone"></i>
-</p>
- <!-- Campo para el email-->
-<p>
-    <input type="email" maxlength="40" size="40" id="h"placeholder="Email" >
-    <i class="input-icon uil uil-at"></i>
-</p>
- <!-- Campo para el contraseña-->
-<p>
-    <input type="password" maxlength="8" size="40" id="h"placeholder="Contraseña" >
-    <i class="input-icon uil uil-lock-alt"></i> <p><h6>8 caracteres |1 letra mayúscula |1 letra minúscula | 1 número |1 carácter especial (! * % $ £ # etc)</p></h6> 
-</p> <br>
-<a href="Inicio.html" class="btn_Crea">Registrar</a>
-
-</fieldset>
-</div></div></div>
 
 <!--pie de pagina-->
 <footer>

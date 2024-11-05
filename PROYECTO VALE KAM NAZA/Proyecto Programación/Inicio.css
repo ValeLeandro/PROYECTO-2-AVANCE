@@ -7,14 +7,13 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 header{
-    position: relative;
+    position: sticky;
     margin: 0;
     width: 100%;
     height: 100px;
     background-color: rgb(3, 27, 12); 
     display: flex;
     align-items: center;
-    position: relative;
     justify-content: space-between;
 }
 .titulo{
@@ -333,6 +332,117 @@ header{
     font-size: 15px;
     margin-bottom: 60px;
 }
+
+.productos-aleatorios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+    margin: 50px; 
+}
+/* estilos del contenedor de productos */
+.container-products {
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+	text-decoration: none
+}
+/* estilos de los enlaces dentro del contenedor de productos */
+.container-products a{
+    text-decoration: none;
+}
+/* estilos de la tarjeta de producto */
+.card-product {
+	background-color: #fff;
+    height: 500px;
+    width: 400px;
+	padding: 2rem 3rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	box-shadow: 0px 6px 6px 6px rgba(7, 49, 24, 0.3);
+    text-decoration: none;
+    color: black;
+}
+.card-product a{
+    text-decoration: none;
+}
+/* tamano de la imagen del producto */
+.card-product .imgPro{
+    height: 300px;
+}
+/* estilos del contenedor de imagen */
+.container-img {
+	position: relative;
+    height: 300px;
+}
+/* estilos de la imagen*/
+.container-img img {
+	width: 100%;
+}
+/* estilos de la etiqueta de descuento */
+.container-img .discount {
+	position: absolute;
+	left: 0;
+	background-color: var(--primary-color);
+	color: #fff;
+	padding: 2px 1.2rem;
+	border-radius: 1rem;
+	font-size: 1.2rem;
+}
+
+.card-product:hover .discount {
+	background-color: #153828;
+}
+/* estilos del grupo de botones */
+.button-group {
+	display: flex;
+	flex-direction: column;
+	top: 0;
+	z-index: -1;
+	transition: all 0.4s ease;
+}
+/* estilos del span dentro del grupo de botones */
+.button-group span {
+	border: 1px solid var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.4s ease;
+}
+/* efecto de hover en el span del grupo de botones */
+
+
+/* estilos del icono dentro del span del grupo de botones */
+.button-group span i {
+	font-size: 1.5rem;
+	color: var(--primary-color);
+}
+
+.button-group span:hover i {
+	color: #fff;
+}
+
+.card-product:hover .button-group {
+	z-index: 0;
+	right: -1rem;
+}
+/* estilos del contenido de la tarjeta de producto */
+.content-card-product {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(4, min-content);
+	row-gap: 1rem;
+}
+
+
+.content-card-product h3 {
+grid-row: 1/2;
+grid-column: 1/-1;
+font-weight: 400;
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
+	cursor: pointer;
+}
 /* video */
 
 .contenedorvideo{
@@ -435,6 +545,7 @@ footer {
 }
 /* estilos del producto en el carrito */
 .cart-product{
+    z-index: 150;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -492,6 +603,7 @@ footer {
     width: 300px;
     height: 50px;
     font-size: 20px;
+    z-index: 150;
     font-family: 'Times New Roman', Times, serif;
     justify-content: center;
 }
@@ -535,6 +647,7 @@ footer {
 
 /* estilos de los botones 1 y 2 */
 .btn1, .btn2 {
+    z-index: 150;
     padding: 10px 25px;
     background-color: #15552c;
     color: white;
@@ -721,4 +834,38 @@ hr {
 /* efecto de hover en el botón */
 .boton:hover {
     background-color: #306f44; 
+}
+
+
+
+.contenedor-caida {
+    position: absolute; 
+    margin-top: 130px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 10;
+}
+
+/* Estilo de cada flor con sus animaciones */
+.flor {
+    position: absolute;
+    animation: caer 5s linear infinite; 
+    will-change: transform; 
+    pointer-events: none; 
+}
+
+/* Animación de caída de las flores */
+@keyframes caer {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(100vh); 
+    }
+}
+
+.subircarrusel{
+    top: -500px;
 }
