@@ -1,0 +1,314 @@
+*{
+	margin: 0;
+}
+/*estilos del cuerpo*/
+body {
+	background-color: beige;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-style: oblique;
+}
+
+/*estilos del header*/
+header {
+    position: sticky; /* Permite que el header se quede en la parte superior */
+    top: 0; 
+    margin: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(3, 27, 12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    z-index: 1000; 
+}
+/*contenedor del titulo de la página*/
+.titulo {
+    margin-left: 140px; 
+    font-size: 22px;
+    color: bisque;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.titulo h1 {
+    color: #ffe4c4;
+    margin: 0; 
+}
+
+/* Iconos como el usuario */
+.iconos ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-right: 30px;
+}
+
+/*aqui comienza el menu desplegable, esto de acá es una animación*/
+.menudesplegable{
+    --img1: scale(1);
+    --img2: scale(0);
+    z-index: 12;
+}
+/* Estilos cuando el menú desplegable está activo, lo mismo acá es una animación para cuando el menu este activo o inactivo */
+.menudesplegable:has( .dropdown:target ){
+    --img1: scale(0);
+    --img2: scale(1);
+    --clip:inset(0 0 0 0);
+    z-index: 14;
+}
+/* Estilos para el contenedor de navegación*/
+.nav__container{
+    width: 100%;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-areas: "title img";
+    align-items: center;
+    overflow: hidden;
+}
+/* estilos menú de Navegación */
+.nav__menu{
+    grid-area: img;
+    position: relative;
+    z-index: 10;
+    transform: var(--img1);
+}
+
+.nav__menu--second{
+    transform: var(--img2);
+}
+/* Iconos */
+.nav_icon{
+    width: 35px;
+    display: block;
+}
+/*esto es para que cuando uno pase el mouse por la imagen se ponga con rellenito*/
+.container_usuario, .container_megusta, .container-cart-icon{
+    position: relative;
+}
+.container_usuario .nav_icon:hover{
+    overflow: hidden;
+}
+.container_megusta .nav_icon:hover{
+    overflow: hidden;
+}
+.container_carrito  .nav_icon:hover{
+    overflow: hidden;
+}
+.container_usuario:hover .nav_icon {
+    content: url(imagenes/usuario.png);
+}
+.container_megusta:hover .nav_icon {
+    content: url(imagenes/corazon.png);
+}
+.container-cart-icon:hover .nav_icon {
+    content: url(imagenes/carrito-de-compras\ \(1\).png);
+}
+/* Estilos para el menú desplegable, además tiene la transición */
+.dropdown{
+    position: absolute;
+    align-items: center;
+    background-color: #0c1d12;
+    margin-top: 280px;
+    margin-left: 50px;
+    width: 100%;
+    height: 350px;
+    max-width: 300px;
+    display: grid;
+    clip-path: var(--clip, inset(0 0 100% 100%));
+    transition: clip-path .5s;
+    z-index: 10;
+}
+
+.lista{
+    list-style: none;
+    height: 40px;
+}
+/*Cada link del menu*/
+.dropdown__link{
+    color: rgb(184, 187, 191);
+    padding: 10px;
+    width: 100px;
+    text-decoration: none; 
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    background-color: var(--bg, transparent);
+}
+/*link cuando se pasa por encima*/
+.dropdown__link:hover{
+    background-color: beige;
+    color: #000;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.btn{
+    background-color: #0c1d12;
+    border: #218838;
+}
+.btn:hover{
+    background-color: #218838;
+}
+table th {
+    background-color: #0c1d12;
+    color: white;
+}
+
+table td img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* Botones */
+.boton {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.boton:hover {
+    background-color: #218838;
+}
+
+.boton-advertencia {
+    background-color: #ffc107;
+}
+
+.boton-advertencia:hover {
+    background-color: #e0a800;
+}
+
+.boton-peligro {
+    background-color: #dc3545;
+}
+
+.boton-peligro:hover {
+    background-color: #c82333;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenido del modal */
+.modal-contenido {
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Título del modal */
+.modal-header {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los inputs en el formulario */
+.formulario input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Estilo del botón de envío del formulario */
+.formulario button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0c1d12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.formulario button:hover {
+    background-color: #0c1d12
+}
+
+/* Estilo para el icono de cerrar del modal */
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #aaa;
+}
+
+.cerrar-modal:hover {
+    color: #333;
+}
+
+/* Estilo para el mensaje de "El carrito está vacío" */
+.cart-empty {
+    text-align: center;
+    color: #777;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Estilo de la imagen en el producto */
+.imagen-producto {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* Contenedor de la tabla y del modal para hacer la página más flexible */
+table, .modal-contenido {
+    width: 100%;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para los botones de editar y eliminar */
+table td button {
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Estilo para la tabla de productos */
+.table-container {
+    overflow-y: auto;
+    max-height: 400px;
+}

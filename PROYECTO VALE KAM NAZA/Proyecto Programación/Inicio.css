@@ -6,19 +6,23 @@ body{
     font-style: oblique;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-header{
+
+header {
     position: sticky;
+    top: 0;
     margin: 0;
     width: 100%;
     height: 100px;
-    background-color: rgb(3, 27, 12); 
+    background-color: rgb(3, 27, 12);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 .titulo{
     width: 100%;
-    margin-left: 140px;
+    margin-left: 340px;
     font-size: 22px;
     color: bisque;
     text-align: center;
@@ -77,7 +81,7 @@ header{
     font-style: oblique;
 }
 .categorias li a{
-    color: white;
+    color: bisque;
     text-decoration: none;
     list-style: none;
     
@@ -505,7 +509,6 @@ footer {
     height: 40px;
 }
 
-
 /* estilos del contador de productos*/
 .count-products{
     position: absolute;
@@ -532,11 +535,10 @@ footer {
     right: 10px;
     background-color: #0c1d12;
     width: 650px;
-    z-index: 150;
+    z-index: 1150;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
     border-radius: 10px;
     color: white;
-    overflow-y: auto;
 }
 .scrollable-cart {
     max-height: 400px;
@@ -620,6 +622,7 @@ footer {
     align-items: center;
     padding: 20px 0;
     gap: 20px;
+    z-index: 150;
 }
 
 /* estilos del encabezado en el total del carrito */
@@ -821,6 +824,8 @@ hr {
 
 /* estilos del botón de comprar*/
 .boton {
+    position: relative;
+    z-index: 10000;
     width: 100%;
     padding: 15px;
     background-color: #153828; 
@@ -854,6 +859,7 @@ hr {
     animation: caer 5s linear infinite; 
     will-change: transform; 
     pointer-events: none; 
+    z-index: 10;
 }
 
 /* Animación de caída de las flores */
@@ -866,6 +872,90 @@ hr {
     }
 }
 
-.subircarrusel{
-    top: -500px;
+.contenedorBusqueda {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#iconoBusqueda {
+    cursor: pointer;
+}
+
+.inputBusqueda {
+    padding: 8px;
+    background-color: bisque;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 0;
+    opacity: 0;
+    transition: width 0.4s ease, opacity 0.4s ease;
+}
+
+.inputBusqueda.mostrar {
+    width: 200px; 
+    opacity: 1;
+}
+
+.oculto {
+    display: none;
+}
+
+.resultadosBusqueda {
+    position: absolute;
+    top: 100px;
+    left: 65%;
+    width: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 100;
+    background-color: beige;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.cerrarBusqueda {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+}
+.resultadosBusqueda a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Quita el subrayado */
+    color: #153828; /* Usa el color del contenedor, no el azul de enlace */
+    padding: 10px 0;
+}
+
+/* Imagen de resultado */
+.imgresultado {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px; /* Opcional: para esquinas redondeadas */
+    margin-right: 10px;
+}
+
+/* Nombre del producto */
+.presultado {
+    font-size: 16px;
+    margin: 0;
+    color: #333; /* Ajusta el color según el diseño */
+    flex: 1; /* Expande para que ocupe el espacio disponible */
+}
+
+/* Precio del producto */
+.precioresultado {
+    font-size: 14px;
+    font-weight: bold;
+    color: #888; 
+    margin-left: 10px;
+}
+
+/* Línea de separación */
+.resultadosBusqueda hr {
+    border-top: 5px solid #0c1d12; 
+    margin: 8px 0;
 }

@@ -1,8 +1,8 @@
 // esto es un array que va a tener las imagenes de las florecitas
-const imagenesFlores = [
-    'imagenes/petalos.png', 
+const imagenesFlores = [ 
     'imagenes/flor-de-cerezo.png',
-    'imagenes/sakura.png'
+    'imagenes/sakura.png',
+    'imagenes/sakura (1).png'
 ];
 
 // esta función crear un flor y la hace caer
@@ -17,7 +17,7 @@ function crearFlorCayendo() {
     flor.src = imagenAleatoria;
 
     // Asignar tamaño aleatorio a cada flor 
-    const tamano = Math.random() * (40 - 13) + 13;
+    const tamano = Math.random() * (30 - 10) + 10;
     flor.style.width = `${tamano}px`;
     flor.style.height = `${tamano}px`;
 
@@ -33,5 +33,5 @@ function crearFlorCayendo() {
     });
 }
 
-// Crear flores cada 200ms (más rápido = más flores)
+// Crear flores cada cierto tiempo, si uno pone muy poquito son un monton de flores y asi 
 setInterval(crearFlorCayendo, 220);

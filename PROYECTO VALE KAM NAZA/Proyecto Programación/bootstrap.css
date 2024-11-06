@@ -4998,10 +4998,7 @@ textarea.form-control-lg {
 
 .carousel {
   position: relative;
-}
-.carousel1 {
-  position: relative;
-  top: -600px;
+  z-index: 1;
 }
 
 .carousel.pointer-event {
@@ -5013,6 +5010,7 @@ textarea.form-control-lg {
   width: 100%;
   height: 500px;
   overflow: hidden;
+  z-index: 1;
 }
 .carousel-inner::after {
   display: block;
@@ -5030,6 +5028,7 @@ textarea.form-control-lg {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition: transform 0.6s ease-in-out;
+  z-index: 1;
 }
 @media (prefers-reduced-motion: reduce) {
   .carousel-item {
@@ -5041,6 +5040,7 @@ textarea.form-control-lg {
 .carousel-item-next,
 .carousel-item-prev {
   display: block;
+  z-index: 1;
 }
 
 .carousel-item-next:not(.carousel-item-start),
@@ -5057,6 +5057,7 @@ textarea.form-control-lg {
   opacity: 0;
   transition-property: opacity;
   transform: none;
+  z-index: 1;
 }
 .carousel-fade .carousel-item.active,
 .carousel-fade .carousel-item-next.carousel-item-start,
@@ -5185,7 +5186,7 @@ textarea.form-control-lg {
   padding-bottom: 130px;
   color: #fff;
   text-align: center;
-  z-index: 6;
+  z-index: 1;
 }
 .carousel-dark .carousel-control-prev-icon,
 .carousel-dark .carousel-control-next-icon {
@@ -5208,6 +5209,14 @@ textarea.form-control-lg {
 }
 [data-bs-theme=dark] .carousel .carousel-caption, [data-bs-theme=dark].carousel .carousel-caption {
   color: #000;
+}
+
+#carouselExampleCaptions {
+  position: relative;
+  z-index: 1;  /* Deja que el carrusel esté debajo de los elementos */
+}
+.carousel-inner {
+  margin-bottom: 20px; /* Añadir un margen inferior para separar el carrusel */
 }
 
 .spinner-grow,

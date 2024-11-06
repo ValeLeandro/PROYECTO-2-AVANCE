@@ -58,7 +58,7 @@ function validarFormulario() {
       }
   
       // Valida la contraseña con la expresión regular
-      const contraseñaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/;
+      const contraseñaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6}$/;
       if (!contraseñaRegex.test(contraseña)) {
         throw new Error("La contraseña debe tener al menos 6 caracteres, una letra mayúscula, una minúscula y un número");
       }

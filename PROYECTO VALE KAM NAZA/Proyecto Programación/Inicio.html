@@ -34,26 +34,31 @@
                 <ul class="dropdown" id="menu">
                     <li class="lista">
                         <a href="inicio.html" class="dropdown__link">
+                            <img src="imagenes/hogar.png" alt="">
                             <span>Inicio</span>
                         </a>
                     </li>
                     <li class="lista">
                         <a href="blusas.html" class="dropdown__link">
+                            <img src="imagenes/blusa.png" alt="">
                             <span>Blusas</span>
                         </a>
                     </li>
                     <li class="lista">
                         <a href="pantalones.html" class="dropdown__link">
+                            <img src="imagenes/pantalones-de-campana.png" alt="">
                             <span>Pantalones</span>
                         </a>
                     </li>
                     <li class="lista">
                         <a href="vestidos.html" class="dropdown__link">
+                            <img src="imagenes/vestido.png" alt="">
                             <span>Vestidos</span>
                         </a>
                     </li>
                     <li class="lista">
                         <a href="zapatos.html" class="dropdown__link">
+                            <img src="imagenes/tacon-alto.png" alt="">
                             <span>Zapatos</span>
                         </a>
                     </li>
@@ -68,7 +73,13 @@
         <nav>
             <div class="iconos">
                 <ul class="iconos_ul">
-    
+                    <div class="contenedorBusqueda">
+                        <input type="text" id="entradaBusqueda" placeholder="Buscar productos...">      
+                        <img onclick="buscarProducto()" src="imagenes/icons8-búsqueda-50.png" alt="Buscar" width="35px">
+                    </div>
+                    <div id="resultadosBusqueda" class="resultadosBusqueda">
+                        <img src="imagenes/close.svg" class="cerrarBusqueda" id="cerrarResultados">
+                    </div>
                     <div class="container_usuario">
                         <li>
                             <a class="usuario" href="iniciodsesion.html">
@@ -140,7 +151,6 @@
         <!-- Las flores se agregarán aquí mediante JS -->
     </div>
     <!-- carrusel de videos -->
-     <div class="subircarrusel">
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -150,7 +160,6 @@
             <!-- primer video en el carrusel -->
             <div class="carousel-item active">
                 <video src="videos/195827a200c3ff07ffa5a1aa1f33be10_t3.mp4"
-                poster="Colección de Verano"
                 autoplay loop
                 muted="true" class="d-block w-100" alt="...">
                 </video>
@@ -164,7 +173,6 @@
             <!-- segundo video en el carrusel -->
             <div class="carousel-item">
                 <video src="videos/pinterestdownloader.com-1715981895.556084.mp4"
-                poster="Colección de Invierno"
                 autoplay
                 loop
                 muted="true" class="d-block w-100" alt="...">
@@ -187,7 +195,7 @@
         </button>
     </div>
    </div>
-</div>
+
 
     <!-- sección de tarjetitas -->
     <div class="imagenesproductos">
@@ -213,19 +221,20 @@
         </div>
     </div>
 
-<div class="productos-aleatorios">
-    <script>mostrarProductosAleatorios();</script>
-</div>
-
-    <!-- video -->
-    <div class="contenedorvideo">
-        <video class="video2" src="videos/195827a200c3ff07ffa5a1aa1f33be10_t3.mp4"
+     <!-- video -->
+     <div class="contenedorvideo">
+        <video class="video2" src="videos/3502eecdd8d3f52d563cb634e56dc378.mp4"
             poster="Colección de Invierno"
             autoplay
             loop
             muted="true" class="d-block w-100" alt="...">
         </video>
     </div>
+<div class="productos-aleatorios">
+    <script>mostrarProductosAleatorios();</script>
+</div>
+
+   
 
     <!--pie de pagina-->
     <footer>
@@ -236,7 +245,7 @@
             <!--redes sociales-->
             <div class="footerredes">
                 <p>Síguenos en nuestras redes sociales</p>
-                <img src="imagenes/instagram (1).png" alt="insta">
+                 <a href=""><img src="imagenes/instagram (1).png" alt="insta"></a>
                 <img src="imagenes/tik-tok.png" alt="">
                 <img src="imagenes/facebook.png" alt="">
             </div>

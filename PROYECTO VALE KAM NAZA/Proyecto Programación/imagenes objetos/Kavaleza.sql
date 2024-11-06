@@ -37,17 +37,7 @@ CREATE TABLE Pago (
     Metodo_pago VARCHAR(100) NOT NULL,
     id_pedido INT,
     FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido),
-	ID_Metodo_Pago INT,
-	FOREIGN KEY (ID_Metodo_Pago) REFERENCES Metodos_Pago(ID_Metodo_Pago)
 );
-
-CREATE TABLE Metodos_Pago (
-    ID_Metodo_Pago INT PRIMARY KEY IDENTITY,
-    Nombre VARCHAR(100) NOT NULL,
-    Descripcion VARCHAR(255)
-);
-
-
 
 CREATE TABLE Productos (
     id_Producto INT IDENTITY(1,1) PRIMARY KEY,
@@ -62,7 +52,7 @@ CREATE TABLE Productos (
 INSERT INTO Productos(id_Producto,Foto,Descuento,NombreProducto,Precio,Categoria)
 VALUES 
 (1, 
-    (SELECT * FROM OPENROWSET(BULK 'imagenes objetos/zapato1.jfif', SINGLE_BLOB) AS Foto), 
+    (SELECT * FROM OPENROWSET(BULK 'C:\imagenes objetos\zapato1.jfif', SINGLE_BLOB) AS Foto), 
     '-13%', 'Tacones negros con detalles dorados', 20, 'Zapatos'),
 (2, 
     (SELECT * FROM OPENROWSET(BULK 'imagenes objetos/zapato2.jfif', SINGLE_BLOB) AS Foto), 
@@ -181,7 +171,7 @@ CREATE TABLE Carrito (
     ID_Usuario INT,
 	FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(Cedula),
     ID_Producto INT,
-	FOREIGN KEY( ID_Producto) REFERENCES Productos( id_Producto),
+	FOREIGN KEY( ID_Producto) REFERENCES Productos(id_Producto),
     Cantidad INT NOT NULL DEFAULT 1,
     Precio_Unitario DECIMAL(10, 2) NOT NULL,
     Fecha_Agregado DATETIME DEFAULT GETDATE()

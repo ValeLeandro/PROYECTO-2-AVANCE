@@ -103,9 +103,12 @@ color: rgb(224, 146, 28);
     outline: none;
     cursor: pointer;
     font-size: 20px;
+    background-color: transparent;
     transition: all 0.4s ease;
 }
-
+.btn_Crea:hover{
+    color: rgb(214, 165, 104);
+}
 a:hover {
     color:rgb(230, 180, 106);
     text-decoration: none;

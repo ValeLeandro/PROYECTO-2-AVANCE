@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="bootstrap.css">
+<link rel="stylesheet" href="modulos.css">
+</head>
+<body>
+    <header>
+        <!-- inicio del menu y del header-->
+        <nav class="menudesplegable">
+            <div class="nav__container">
+                <!-- botón para abrir el menú -->
+                <a href="#menu" class="nav__menu">
+                    <img src="imagenes/menu.svg" class="nav_icon">
+                </a>
+                <!-- botón para cerrar el menú -->
+                <a href="#" class="nav__menu nav__menu--second">
+                    <img src="imagenes/close.svg" class="nav_icon">
+                </a>
+                <!-- lista desplegable del menú -->
+                <ul class="dropdown" id="menu">
+                    <li class="lista">
+                        <a href="blusas.html" class="dropdown__link">
+                            <span>Blusas</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="pantalones.html" class="dropdown__link">
+                            <span>Pantalones</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="vestidos.html" class="dropdown__link">
+                            <span>Vestidos</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="zapatos.html" class="dropdown__link">
+                            <span>Zapatos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- título de la tienda -->
+        <div class="titulo"><h1>KAVALEZA</h1></div>
+
+        <!-- barra de iconos de navegación -->
+        <nav>
+            <div class="iconos">
+                <ul class="iconos_ul">
+                   
+                    <div class="container_usuario">
+                        <li>
+                            <a class="usuario" href="iniciodsesion.html">
+                                <img src="imagenes/usuario (1).png" class="nav_icon" width="35px">
+                            </a>
+                        </li>
+                    </div>
+                    <!--Aqui comienza el carrito este es el contenedor-->
+                    <div class="container-icon">
+                        <div class="container-cart-icon">
+                            <img class="nav_icon" src="imagenes/carrito-de-compras (2).png" alt="">
+                        </div>
+                      
+                        
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="contenedor">
+        <h2 class="productos">Gestión de Productos</h2>
+    
+        <!-- Botón para agregar un nuevo producto -->
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto" onclick="limpiarFormulario()">Agregar Producto</button>
+    
+        <!-- Tabla de productos -->
+        <table class="tabla" id="tablaProductos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Imagen</th>
+                    <th>Precio con Descuento</th>
+                    <th>Descripción</th>
+                    <th>Precio Original</th>
+                    <th>Categoría</th>
+                    <th>Imagen Adicional</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaProductos">
+                <!-- Los productos se añadirán dinámicamente aquí -->
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Modal para agregar/editar producto -->
+    <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalProductoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header encabezado-modal">
+                    <h5 class="modal-title" id="modalProductoLabel">Agregar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formularioProducto">
+                        <div class="mb-3">
+                            <label for="nombreProducto" class="form-label">Descripción del Producto</label>
+                            <input type="text" class="form-control" id="nombreProducto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="precioConDescuento" class="form-label">Precio con Descuento</label>
+                            <input type="number" class="form-control" id="precioConDescuento" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="precioOriginal" class="form-label">Precio Original</label>
+                            <input type="number" class="form-control" id="precioOriginal" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="categoriaProducto" class="form-label">Categoría</label>
+                            <input type="text" class="form-control" id="categoriaProducto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="imagenProducto" class="form-label">Imagen del Producto</label>
+                            <input type="text" class="form-control" id="imagenProducto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="imagenAdicional" class="form-label">Imagen Adicional</label>
+                            <input type="text" class="form-control" id="imagenAdicional" required>
+                        </div>
+                        <input type="hidden" id="idProducto">
+                        <button type="submit" class="btn btn-primary" id="botonEnviar">Agregar Producto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contenedor">
+        <h2 class="productos">Gestión de Usuarios</h2>
+    
+        <!-- Botón para agregar un nuevo usuario -->
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUsuario" onclick="limpiarFormulario()">Agregar Usuario</button>
+    
+        <!-- Tabla de usuarios -->
+        <table class="tabla" id="tablaUsuarios">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cédula</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                    <th>Tipo de Usuario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaUsuarios">
+                <!-- Los usuarios se añadirán dinámicamente aquí -->
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Modal para agregar/editar usuario -->
+    <div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header encabezado-modal">
+                    <h5 class="modal-title" id="modalUsuarioLabel">Agregar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formularioUsuario">
+                        <div class="mb-3">
+                            <label for="cedulaUsuario" class="form-label">Cédula</label>
+                            <input type="text" class="form-control" id="cedulaUsuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombreUsuario" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombreUsuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellidoUsuario" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="apellidoUsuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefonoUsuario" class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" id="telefonoUsuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccionUsuario" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="direccionUsuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-control" id="tipoUsuario" required>
+                                <option value="" disabled selected>Seleccione un tipo</option>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Cliente">Cliente</option>
+                            </select>
+                        </div>
+                        <input type="hidden" id="idUsuario">
+                        <button type="submit" class="btn btn-primary" id="botonEnviar">Agregar Usuario</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -9,11 +9,6 @@ btnCart.addEventListener("click", () => {
   containerCartProducts.classList.toggle("hidden-cart"); 
 });
 
-// Esto cada vez que se presiona el boton de pagar vacía todo el carrito, ya que eso compra el producto entonces se necesita vaciar 
-btnPagar.addEventListener("click", () => {
-  cart = [];
-  showHTML(); 
-});
 
 // Seleccióona elementos que mostraran la información del carrito
 const cartInfo = document.querySelector(".cart-product");
@@ -212,6 +207,11 @@ function validarFormulario() {
       customClass: {
         confirmButton: 'alertbutton', 
       }
+      
+    }).then(() => {
+      // Vaciar el carrito SOLO si la compra fue exitosa
+      cart = [];  // Vacía el carrito
+      showHTML();  // Actualiza la interfaz para reflejar que el carrito está vacío
     });
 
   } catch (error) {
