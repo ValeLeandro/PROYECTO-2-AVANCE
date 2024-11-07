@@ -84,24 +84,20 @@ header {
     display: block;
 }
 /*esto es para que cuando uno pase el mouse por la imagen se ponga con rellenito*/
-.container_usuario, .container_megusta, .container-cart-icon{
+.container_usuario, .container-cart-icon{
     position: relative;
 }
 .container_usuario .nav_icon:hover{
     overflow: hidden;
 }
-.container_megusta .nav_icon:hover{
-    overflow: hidden;
-}
+
 .container_carrito  .nav_icon:hover{
     overflow: hidden;
 }
 .container_usuario:hover .nav_icon {
     content: url(imagenes/usuario.png);
 }
-.container_megusta:hover .nav_icon {
-    content: url(imagenes/corazon.png);
-}
+
 .container-cart-icon:hover .nav_icon {
     content: url(imagenes/carrito-de-compras\ \(1\).png);
 }
@@ -129,11 +125,11 @@ header {
 .dropdown__link{
     color: rgb(184, 187, 191);
     padding: 10px;
-    width: 100px;
+    gap: 20px;
+    width: 220px;
     text-decoration: none; 
     display: flex;
     align-items: center;
-
     position: relative;
     background-color: var(--bg, transparent);
 }
@@ -142,6 +138,11 @@ header {
     background-color: beige;
     color: #000;
 }
+.icono{
+    width: 30px;
+    height: 30px;
+}
+/* titulo*/
 h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -159,6 +160,8 @@ table th, table td {
     text-align: center;
     border: 1px solid #ddd;
 }
+
+/*Estilo del boton*/
 .btn{
     background-color: #0c1d12;
     border: #218838;
@@ -192,21 +195,6 @@ table td img {
     background-color: #218838;
 }
 
-.boton-advertencia {
-    background-color: #ffc107;
-}
-
-.boton-advertencia:hover {
-    background-color: #e0a800;
-}
-
-.boton-peligro {
-    background-color: #dc3545;
-}
-
-.boton-peligro:hover {
-    background-color: #c82333;
-}
 
 /* Modal */
 .modal {
@@ -275,13 +263,6 @@ table td img {
     color: #333;
 }
 
-/* Estilo para el mensaje de "El carrito está vacío" */
-.cart-empty {
-    text-align: center;
-    color: #777;
-    font-size: 16px;
-    margin-top: 20px;
-}
 
 /* Estilo de la imagen en el producto */
 .imagen-producto {

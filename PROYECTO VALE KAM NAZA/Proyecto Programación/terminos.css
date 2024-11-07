@@ -237,3 +237,332 @@ footer {
     width: 50px;
     height: 40px;
 }
+
+/* estilos del contador de productos*/
+.count-products{
+    position: absolute;
+    top: 55%;
+    right: 50px;
+    background-color: #000;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+/* estilos del contenedor del contador de productos*/
+#contador-productos{
+    font-size: 12px;
+    background-color: #000;
+}
+/* estilos del contenedor del carrito de productos */
+.container-cart-products{
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: #0c1d12;
+    width: 650px;
+    z-index: 150;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+    color: white;
+    overflow-y: auto;
+}
+.scrollable-cart {
+    max-height: 400px;
+    overflow-y: auto;  
+    border: 1px solid #153828; 
+}
+/* estilos del producto en el carrito */
+.cart-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+    max-height: 200px; /* Altura máxima para el contenedor de productos */
+    overflow-y: auto;
+}
+/* info del producto en el carrito */
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+/* titulo del producto en el carrito */
+.titulo-producto-carrito{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*precio del producto en el carrito */
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* cantidad del producto en el carrito */
+.cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* icono para borrar un producto en el carrito */
+.icon-close{
+    width: 25px;
+    height: 25px;
+}
+.imgcarrito{
+    width: 40px;
+    height: 40px;
+}
+/* estilos del botón del carrito */
+.btnCart {
+    margin-top: 20px;
+    margin-left: 60px;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    background-color: #0c1d12;
+    color: #fff;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+}
+
+/* efecto de hover en el botón del carrito */
+.btnCart:hover {
+    background-color: #153828;
+}
+
+/* estilos del total del carrito */
+.cart-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+/* estilos del encabezado en el total del carrito */
+.cart-total h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* estilos del total a pagar */
+.total-pagar {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+/* ocultar el carrito */
+.hidden-cart {
+    display: none;
+}
+
+/* estilos del mensaje cuando el carrito está vacío */
+.cart-empty {
+    padding: 20px;
+    text-align: center;
+}
+
+/* estilos de los botones 1 y 2 */
+.btn1, .btn2 {
+    padding: 10px 25px;
+    background-color: #15552c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+/* efecto de hover en los botones 1 y 2 */
+.btn2:hover, .btn1:hover {
+    background-color: #153828;
+}
+
+/* clase para ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* estilos del título en el modal */
+.h1modal {
+    text-align: center;
+    width: 100%;
+}
+
+/* estilos del resumen de lo que se está pagando */
+.Resumen {
+    border: #0c1d12;
+    max-width: 500px;
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.modal-body {
+    padding: 20px;
+}
+
+.Resumen {
+    margin-bottom: 30px;
+}
+
+.Resumen h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.tituloresumen{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    color: #153828;
+}
+
+/* estilos de la fila de productos en el resumen*/
+.row-product2 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.row-product2 .cart-product {
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* estilos de la imagen del producto en el carrito */
+.cart-product img {
+    margin-right: 10px;
+}
+
+/* estilos del total en la fila del resumen del carrito cuando ya le diste comprar */
+.cart-total2 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* estilos del botón de alerta */
+.alertbutton {
+    background-color: #153828; 
+    color: white;             
+}
+
+/* efecto de hover en el botón de alerta */
+.alertbutton:hover {
+    background-color: #0c1d12;
+}
+
+/* estilos del pago, esto saldrá dentro del modal de Bootstrap */
+.Pago {
+    max-width: 650px;
+    margin: 0 auto;
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* estilos de los encabezados en el pago */
+.Pago h2, h3 {
+    text-align: center;
+    color: #0c1d12; 
+    font-size: 35px;
+    font-family: 'Dancing Script', cursive; 
+}
+
+/* estilos del encabezado en la tarjeta del producto */
+.content-card-product h3 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* estilos para entrega y pago */
+.entrega, .pago {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* estilos de las etiquetas */
+label {
+    display: block;
+    margin-bottom: 3px;
+    color: #153828; 
+}
+
+/* estilos del encabezado */
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* estilos del campo de texto */
+.texto2 {
+    width: 500px;
+    padding: 7px;
+    margin-bottom: 5px;
+    border: 2px solid #0c1d12; 
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+/* estilos para el contenedor de tarjetas */
+.tarjetas {
+    text-align: center;
+    border: 2px solid #0c1d12; 
+    margin-bottom: 30px;
+}
+
+/* estilos de las imágenes de las tarjetas */
+.imagen-tarjetas {
+    max-width: 200px;
+    height: auto;
+}
+
+/* estilos de la línea horizontal */
+hr {
+    color: #0a0906;
+}
+
+/* estilos del icono de cerrar */
+.icon-close img {
+    height: 30px;
+    width: 30px;
+}
+
+/* estilos del botón de comprar*/
+.boton {
+    width: 100%;
+    padding: 15px;
+    background-color: #153828; 
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* efecto de hover en el botón */
+.boton:hover {
+    background-color: #306f44; 
+}

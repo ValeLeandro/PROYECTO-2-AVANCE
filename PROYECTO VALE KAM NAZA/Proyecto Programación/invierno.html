@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo Invierno-Muy Pronto</title>
+    <link rel="stylesheet" href="Inicio.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="bootstrap.js"></script>
+    <script src="datos.js"></script>
+    <script src="info.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="decoracion2.js"></script>
+</head>
+
+<body>
+    <header>
+        <!-- inicio del menu y del header-->
+        <nav class="menudesplegable">
+            <div class="nav__container">
+                <!-- botón para abrir el menú -->
+                <a href="#menu" class="nav__menu">
+                    <img src="imagenes/menu.svg" class="nav_icon">
+                </a>
+                <!-- botón para cerrar el menú -->
+                <a href="#" class="nav__menu nav__menu--second">
+                    <img src="imagenes/close.svg" class="nav_icon">
+                </a>
+                <!-- lista desplegable del menú -->
+                <ul class="dropdown" id="menu">
+                    <li class="lista">
+                        <a href="inicio.html" class="dropdown__link">
+                            <img src="imagenes/hogar.png" alt="">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="blusas.html" class="dropdown__link">
+                            <img src="imagenes/blusa.png" alt="">
+                            <span>Blusas</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="pantalones.html" class="dropdown__link">
+                            <img src="imagenes/pantalones-de-campana.png" alt="">
+                            <span>Pantalones</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="vestidos.html" class="dropdown__link">
+                            <img src="imagenes/vestido.png" alt="">
+                            <span>Vestidos</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="zapatos.html" class="dropdown__link">
+                            <img src="imagenes/tacon-alto.png" alt="">
+                            <span>Zapatos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- título de la tienda -->
+        <div class="titulo1">
+            <h1>KAVALEZA</h1>
+        </div>
+
+        <!-- barra de iconos de navegación -->
+        <nav>
+            <div class="iconos">
+                <ul class="iconos_ul">
+
+                    <div class="container_usuario">
+                        <li>
+                            <a class="usuario" href="iniciodsesion.html">
+                                <img src="imagenes/usuario (1).png" class="nav_icon" width="35px">
+                            </a>
+                        </li>
+                    </div>
+                    <!--Aqui comienza el carrito este es el contenedor-->
+                    <div class="container-icon">
+                        <div class="container-cart-icon">
+                            <img class="nav_icon" src="imagenes/carrito-de-compras.png" alt="">
+                        </div>
+                        <!--Contador de productos seleccionados-->
+                        <div class="count-products">
+                            <div id="contador-productos">0</div>
+                        </div>
+
+                        <div class="container-cart-products hidden-cart">
+                            <!-- contenedor principal del carrito, inicialmente oculto -->
+                            <div class="scrollable-cart">
+                                <div class="row-product hidden">
+                                    <!-- contenedor del producto en el carrito -->
+                                    <div class="cart-product">
+
+                                        <div class="info-cart-product">
+                                            <!-- información del producto: imagen, título y precio -->
+                                            <img src="" class="cart-product-image" style="width:50px; height:50px;">
+                                            <p class="titulo-producto-carrito"></p>
+                                            <span class="precio-producto-carrito"></span>
+                                        </div>
+                                        <!-- icono para eliminar el producto del carrito -->
+                                        <img class="icon-close" src="imagenes/close.svg" alt="">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cart-total hidden">
+                                <!-- contenedor para el total del carrito, el hidden es que va a estar inicialmente oculto -->
+                                <h3>Total:</h3>
+                                <span class="total-pagar"></span>
+
+                            </div>
+                            <!-- mensaje para cuando no hay productos en el carrito -->
+                            <p class="cart-empty">El carrito está vacío</p>
+
+                            <!-- botón para iniciar el proceso de compra -->
+                            <button type="button" class="boton btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Comprar
+                            </button>
+                        </div>
+
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="contenedor-caida2">
+        <!-- Las flores se agregarán aquí mediante JS -->
+    </div>
+     <!-- imagen de fondo para la sección de inicio de sesión -->
+     <div class="fondo">
+        <img src="imagenes/download (14).jpeg" alt="">
+        <div class="carousel-caption d-none d-md-block">
+            <h2>Colección de Invierno</h2>
+            <p>Nustra Colección de invierno pronto estará disponible, <br> esperala en KAVALEZA.</p>
+        </div>
+      </div>
+      <footer>
+        <div class="final">
+            <div class="footerlogo">
+                <img src="imagenes/image.png">
+            </div>
+            <!--redes sociales-->
+            <div class="footerredes">
+                <p>Síguenos en nuestras redes sociales</p>
+                 <a href=""><img src="imagenes/instagram (1).png" alt="insta"></a>
+                <img src="imagenes/tik-tok.png" alt="">
+                <img src="imagenes/facebook.png" alt="">
+            </div>
+            <!--links para los terminos-->
+            <div class="footer-terminos">
+               <div><a href="terminos.html">Términos y Condiciones</a></div>
+               <div><a href="politica.html">Política de Privacidad</a></div>
+               
+            </div>
+        </div>
+            <div class="footer-info">
+                <p>&copy; 2024 Kavaleza. Todos los derechos reservados.</p>
+            </div>
+    </footer>
+</body>
+</html>

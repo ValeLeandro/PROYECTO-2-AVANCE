@@ -83,24 +83,20 @@ header {
     display: block;
 }
 /*esto es para que cuando uno pase el mouse por la imagen se ponga con rellenito*/
-.container_usuario, .container_megusta, .container-cart-icon{
+.container_usuario,  .container-cart-icon{
     position: relative;
 }
 .container_usuario .nav_icon:hover{
     overflow: hidden;
 }
-.container_megusta .nav_icon:hover{
-    overflow: hidden;
-}
+
 .container_carrito  .nav_icon:hover{
     overflow: hidden;
 }
 .container_usuario:hover .nav_icon {
     content: url(imagenes/usuario.png);
 }
-.container_megusta:hover .nav_icon {
-    content: url(imagenes/corazon.png);
-}
+
 .container-cart-icon:hover .nav_icon {
     content: url(imagenes/carrito-de-compras\ \(1\).png);
 }
@@ -128,11 +124,11 @@ header {
 .dropdown__link{
     color: rgb(184, 187, 191);
     padding: 10px;
-    width: 100px;
+    width: 220px;
     text-decoration: none; 
     display: flex;
     align-items: center;
-
+    gap: 20px;
     position: relative;
     background-color: var(--bg, transparent);
 }

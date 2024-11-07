@@ -1,4 +1,9 @@
-var productos=[[1,"imagenes objetos/zapato1.jfif","13","Tacones negros con detalles dorados",20,"zapatos","imagenes objetos/modelozapa1.jpeg"],
+var productos;
+
+if (!productos || productos.length === 0) {
+
+    productos =[
+[1,"imagenes objetos/zapato1.jfif","13","Tacones negros con detalles dorados",20,"zapatos","imagenes objetos/modelozapa1.jpeg"],
 [2,"imagenes objetos/zapato2.jfif","5","Tacones rosados pastel con plataforma",35,"zapatos","imagenes objetos/modelozapa2.jpg"],
 [3,"imagenes objetos/zapato3.jfif","15","Tacones negros elegantes",35,"zapatos","imagenes objetos/modelozapa3.jpg"],
 [4,"imagenes objetos/zapato4.jfif","15","Tacones plateados con brillo",35,"zapatos","imagenes objetos/modelozapa4.jpg"],
@@ -15,7 +20,7 @@ var productos=[[1,"imagenes objetos/zapato1.jfif","13","Tacones negros con detal
 [15,"imagenes objetos/blusa3.jpeg","15","Blusa Negra Asimétrica con Nudo",28,"blusas","imagenes objetos/modelo3blusa.jpeg"],
 [16,"imagenes objetos/blusa4.jpg","15","Blusa Negra con Cuello Blanco Cuadrado",25,"blusas","imagenes objetos/modeloblusa4.jpg"],
 [17,"imagenes objetos/blusa5.jpg","10","Blusa Polo Negra con Blanco",35,"blusas","imagenes objetos/modeloblusa5.jpg"],
-[18,"imagenes objetos/blusa6.jpg","13","Blusa Blanca con Fruncido",35,"blusas","imagenes objetos/modeloblusa6.jpeg"],
+[18,"imagenes objetos/blusa6.jpg","13","Blusa Blanca con Fruncido",35,"blusas","imagenes objetos/modeloblusa6.jpg"],
 [19,"imagenes objetos/blusa7.jpg","13","Blusa Blanca Off-Shoulder",20,"blusas","imagenes objetos/modeloblusa7.jpg"],
 [20,"imagenes objetos/blusa8.jpg","10","Blusa Negra Espalda Descubierta",35,"blusas","imagenes objetos/modeloblusa8.jpg"],
 [21,"imagenes objetos/blusa9.jpg","5","Blusa Blanca con flores azules",25,"blusas","imagenes objetos/modeloblusa9.jpg"],
@@ -47,9 +52,14 @@ var productos=[[1,"imagenes objetos/zapato1.jfif","13","Tacones negros con detal
 [47,"imagenes objetos/pantalon11.jpg","13","Jeans casual",27,"pantalones","imagenes objetos/modelopanta11.jpg"],
 [48,"imagenes objetos/pantalon12.jpg","5","Pantalon formal talle alto",38,"pantalones","imagenes objetos/modelopanta12.jpg"]
 ]
+localStorage.setItem('productos', JSON.stringify(productos));
+} else {
+    // Si ya existen productos en localStorage, asigna el array recuperado
+    productos = JSON.parse(localStorage.getItem('productos'));
+}
 
 
-var cart=new Array();
+
 
 
 

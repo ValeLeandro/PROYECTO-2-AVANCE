@@ -204,6 +204,7 @@ function mostrarProductosAleatorios() {
                 <p class="price">$${producto[4]}</p>
                 <img id="imgcarrito" onclick="addCart(${producto[0]})" src="imagenes objetos/icons8-carrito-de-compras-48.png" alt="Agregar al carrito">
               </div>
+              
             </div>
         
         </div>
@@ -223,6 +224,10 @@ document.addEventListener('DOMContentLoaded', function() {
   contenedorResultados.classList.add('oculto'); // Ocultamos el contenedor de resultados al cargar la página
 });
 
+
+
+
+
 // Función para buscar productos
 function buscarProducto() {
   const query = document.getElementById('entradaBusqueda').value.trim().toLowerCase();
@@ -235,13 +240,13 @@ function buscarProducto() {
   
   // Si se ingresa un término de búsqueda
   if (query) {
-      // Filtramos los productos que coinciden con el término de búsqueda
+      // ahora acá se filtran los productos que coinciden con el término de búsqueda, si buscas blusa va a buscar cual incluye la palaba blusa
       const resultados = productos.filter(producto => 
-          producto[3].toLowerCase().includes(query) ||  // Filtramos por nombre
-          producto[5].toLowerCase().includes(query)     // Filtramos por categoría
+          producto[3].toLowerCase().includes(query) ||  // Filtramos por nombre, por si se busca ya sea con el nombre
+          producto[5].toLowerCase().includes(query)     // Filtramos por categoría o si se busca con categoria
       );
 
-      // Si se encuentran resultados
+      // Si se encuentran resultados va a pegar en el html los productos que coinciden
       if (resultados.length > 0) {
           resultados.forEach(producto => {
               const item = document.createElement('div');

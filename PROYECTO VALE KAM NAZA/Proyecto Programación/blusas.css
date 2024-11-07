@@ -95,24 +95,20 @@ header {
     display: block;
 }
 /*esto es para que cuando uno pase el mouse por la imagen se ponga con rellenito*/
-.container_usuario, .container_megusta, .container-cart-icon{
+.container_usuario, .container-cart-icon{
     position: relative;
 }
 .container_usuario .nav_icon:hover{
     overflow: hidden;
 }
-.container_megusta .nav_icon:hover{
-    overflow: hidden;
-}
+
 .container_carrito  .nav_icon:hover{
     overflow: hidden;
 }
 .container_usuario:hover .nav_icon {
     content: url(imagenes/usuario.png);
 }
-.container_megusta:hover .nav_icon {
-    content: url(imagenes/corazon.png);
-}
+
 .container-cart-icon:hover .nav_icon {
     content: url(imagenes/carrito-de-compras\ \(1\).png);
 }
@@ -140,11 +136,11 @@ header {
 .dropdown__link{
     color: rgb(184, 187, 191);
     padding: 10px;
-    width: 100px;
+    gap: 20px;
+    width: 220px;
     text-decoration: none; 
     display: flex;
     align-items: center;
-
     position: relative;
     background-color: var(--bg, transparent);
 }
@@ -239,21 +235,86 @@ height: 100px;
 }
 /* estilos de la tarjeta de producto */
 .card-product {
-	background-color: #fff;
-    height: 650px;
-	padding: 2rem 3rem;
-	border-radius: 0.5rem;
-	cursor: pointer;
-	box-shadow: 0px 6px 6px 6px rgba(7, 49, 24, 0.3);
+    background-color: #fff;
+    height: 520px;
+    width: 400px;
+    padding: 2rem 3rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0px 6px 6px 6px rgba(7, 49, 24, 0.3);
     text-decoration: none;
     color: black;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    z-index: 10; 
+}
+
+/* Esto añadirá la imagen cuando se haga hover */
+.card-product:hover::before {
+    content: ''; 
+    z-index: -1;
+    position: absolute; 
+    top: 200px; 
+    left: 10px; 
+    width: 500px; 
+    height: 500px; 
+    transition: all 0.3s ease; 
+}
+/* Esto añadirá la imagen cuando se haga hover */
+.card-product:hover::after {
+    content: ''; 
+    z-index: -1;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 500px; 
+    height: 500px; 
+    transition: all 0.3s ease; 
+}
+
+/* Imágenes de fondo cuando se pasa el ratón, esta es la de abajo de la tarjeta*/
+.card-product:hover::before {
+    background-image: url('imagenes/Diseño_sin_título__1_-removebg-preview.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+/*esta es la de arriba de la tarjeta*/
+.card-product:hover::after {
+    background-image: url('imagenes/Diseño_sin_título-removebg-preview.png'); 
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+
+/* Cuando se pasa el mouse sobre la tarjeta nada mas se pasa a beige */
+.card-product:hover {
+    background-color: beige;
+}
+
+/* Esto es para segurarse de que los enlaces y botones estén encima de las imágenes */
+.card-product a,
+.card-product .add-to-cart {
+    position: relative;
+    z-index: 1; 
+}
+
+
+/* Esto asegura que el icono del carrito sea clickeable, porque tuve algunos problemas con eso */
+#imgcarrito {
+    cursor: pointer; 
+    z-index: 100;
+}
+.card-product:hover{
+    background-color: beige;
 }
 .card-product a{
     text-decoration: none;
 }
 /* tamano de la imagen del producto */
-.card-product .imgPro{
-    height: 350px;
+.imgPro{
+    height: 280px;
 }
 /* estilos del contenedor de imagen */
 .container-img {
@@ -282,18 +343,20 @@ height: 100px;
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-
 	position: absolute;
 	top: 0;
 	right: -3rem;
-	z-index: -1;
+	z-index: 10;
 	transition: all 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+
 }
 /* estilos del span dentro del grupo de botones */
 .button-group span {
 	border: 1px solid var(--primary-color);
 	padding: 0.8rem;
-
+    z-index: 100;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -303,23 +366,15 @@ height: 100px;
 }
 /* efecto de hover en el span del grupo de botones */
 .button-group span:hover {
-	background-color: var(--primary-color);
+    z-index: 10;
 }
 
-
-/* estilos del icono dentro del span del grupo de botones */
-.button-group span i {
-	font-size: 1.5rem;
-	color: var(--primary-color);
-}
-
-.button-group span:hover i {
-	color: #fff;
-}
 
 .card-product:hover .button-group {
-	z-index: 0;
+	z-index: 100;
 	right: -1rem;
+    opacity: 1;
+    visibility: visible;
 }
 /* estilos del contenido de la tarjeta de producto */
 .content-card-product {

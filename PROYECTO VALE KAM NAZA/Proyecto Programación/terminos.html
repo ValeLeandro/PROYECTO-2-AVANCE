@@ -6,6 +6,14 @@
     <title>Términos y Condiciones - KAVALEZA</title>
     <link rel="stylesheet" href="terminos.css">
     <link rel="shorttcut icon" href="imagenes/logo-Photoroom.png">
+    <script src="datos.js"></script>
+    <script src="info.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -74,7 +82,7 @@
                     <!--Aqui comienza el carrito este es el contenedor-->
                     <div class="container-icon">
                         <div class="container-cart-icon">
-                            <img class="nav_icon" src="imagenes/carrito-de-compras (2).png" alt="">
+                            <img class="nav_icon" src="imagenes/carrito-de-compras.png" alt="">
                         </div>
                         <!--Contador de productos seleccionados-->
                         <div class="count-products">
@@ -83,7 +91,7 @@
                         
                         <div class="container-cart-products hidden-cart">
                             <!-- contenedor principal del carrito, inicialmente oculto -->
-                        
+                        <div class="scrollable-cart">
                             <div class="row-product hidden">
                                 <!-- contenedor del producto en el carrito -->
                                 <div class="cart-product">
@@ -110,13 +118,13 @@
                             <p class="cart-empty">El carrito está vacío</p>
                             
                             <!-- botón para iniciar el proceso de compra -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="boton btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Comprar
                                 
                             </button>
                         </div>
                         
-                    </div>
+                    </div></div>
                 </ul>
             </div>
         </nav>
@@ -191,5 +199,84 @@
                 <p>&copy; 2024 Kavaleza. Todos los derechos reservados.</p>
             </div>
     </footer>
+     <!--Este es un modal de librería de códico de Bootstrap-->
+     <div class="modal fade" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog modal-xl"><!--Modal bastante grande-->
+          <div class="modal-content">
+            <!--Header del modal-->
+            <div class="modal-header">
+              <div class="h1modal"><h1 class="modal-title fs-5" id="exampleModalLabel">Método de Pago</h1></div>
+              <img src="imagenes/close.svg"class="nav_icon" data-bs-dismiss="modal"  alt="">
+            </div>
+            <div class="modal-body">
+                <!--Aquí saldrá los productos que el cliente va a compra y el total-->
+              <div class="Resumen">
+                <!--Aquí aparecerá la info de productos-->
+                <div class="tituloresumen"><h4>Productos</h4></div><hr>
+                  <div class="row-product2">
+                      
+                  </div>
+                  <!--Total de la compra-->
+                  <div class="cart-total2">
+                      <h3>Total:</h3><hr>
+                      <span class="total-pagar2"></span>
+                  </div><hr>
+              </div>
+              <div class="Pago">
+                  
+                  <hr>
+                  <!--Este es el formulario para poner la direccion de entrega-->
+                  <form id="hora-de-pagar-marce">
+                      
+                      <div class="entrega">
+                          <h3>Información de Entrega</h3><br>
+                          <label for="nombre">Nombre Completo:</label><br>
+                          <input type="text" id="nombre" class="texto2" required><hr>
+          
+                          <label for="direccion">Dirección de Entrega:</label><br>
+                          <input type="text" id="direccion" class="texto2" required><hr>
+          
+                          <label for="ciudad">Ciudad:</label><br>
+                          <input type="text" id="ciudad" class="texto2" required><hr>
+          
+                          <label for="pais">País:</label><br>
+                          <input type="text" id="pais" class="texto2" required><hr>
+                      </div>
+                      
+                      <hr>
+                      <!--Este es el formulario para poner la información de la tarjeta-->
+                      <div class="pago">
+                          <h3>Información de Pago</h3>
+                          <label for="numero-tarjeta">Número de Tarjeta:</label><br>
+                          <input type="text" id="numero-tarjeta" class="texto2" placeholder="6298 6298 6298 6298" required><hr>
+          
+                          <label for="fecha-expiracion">Fecha de Expiración:</label><br>
+                          <input type="text" id="fecha-expiracion" class="texto2" placeholder="MM/AA" required><hr>
+          
+                          <label for="cvv">CVV:</label><br>
+                          <input type="text" id="cvv" class="texto2" placeholder="629"  max="3" required><hr>
+                      </div>
+          
+          
+                      <hr>
+                      <!--Tarjetas-->
+                      <div class="tarjetas">
+                          <h4>Tarjetas Aceptadas</h4>
+                          <img class="imagen-tarjetas" src="imagenes/tarjetas.webp" alt="">
+                      </div>
+          
+      
+                  </form>
+              </div>
+            </div>
+            <!--Botones, el de pagar y el de cerrar el modal-->
+            <div class="modal-footer">
+              <button type="button" class="btn1 btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
+              <button type="button" onclick="validarFormulario()" class="btn2 btn-primary">Pagar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="carrito.js"></script>
 </body>
 </html>

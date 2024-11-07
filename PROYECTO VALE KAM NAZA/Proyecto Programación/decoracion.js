@@ -1,8 +1,7 @@
 // esto es un array que va a tener las imagenes de las florecitas
 const imagenesFlores = [ 
     'imagenes/flor-de-cerezo.png',
-    'imagenes/sakura.png',
-    'imagenes/sakura (1).png'
+    'imagenes/sakura.png'
 ];
 
 // esta función crear un flor y la hace caer
@@ -34,4 +33,5 @@ function crearFlorCayendo() {
 }
 
 // Crear flores cada cierto tiempo, si uno pone muy poquito son un monton de flores y asi 
-setInterval(crearFlorCayendo, 220);
+setInterval(crearFlorCayendo, 230);
+

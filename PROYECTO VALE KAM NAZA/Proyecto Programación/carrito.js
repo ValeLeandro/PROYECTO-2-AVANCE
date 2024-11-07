@@ -1,4 +1,4 @@
-// esto selecciona cosas del html, como el boton del carrito, el contenedor de los productos en el carrito, boton de comprar y pagar
+// Esto selecciona cosas del html, como el boton del carrito, el contenedor de los productos en el carrito, boton de comprar y pagar
 const btnCart = document.querySelector(".container-cart-icon"); 
 const containerCartProducts = document.querySelector(".container-cart-products"); 
 const btnComprar = document.querySelector(".btn1.btn-primary[data-bs-toggle='modal']"); 
@@ -9,8 +9,7 @@ btnCart.addEventListener("click", () => {
   containerCartProducts.classList.toggle("hidden-cart"); 
 });
 
-
-// Seleccióona elementos que mostraran la información del carrito
+// Esta parte es la selección de elementos que mostraran la información del carrito
 const cartInfo = document.querySelector(".cart-product");
 const rowProduct = document.querySelector(".row-product");
 const rowProduct2 = document.querySelector(".row-product2");
@@ -22,24 +21,31 @@ const cartEmpty = document.querySelector(".cart-empty");
 const cartTotal = document.querySelector(".cart-total"); 
 const cartTotal2 = document.querySelector(".cart-total2"); 
 
-// Función para agregar un producto al carrito
+// Esto es una variable que va a cargar el carrito desde el localStorage si existe, o si no lo empieza vacío
+var cart = JSON.parse(localStorage.getItem("cart")) || []; 
 
+// Esto es porque no se me actualizaba el contador, solo cuando agregaba un nuevo producto entonces lo que hice fue esto para que se actualizara cuando se abre la pagina
+document.addEventListener("DOMContentLoaded", () => {
+  showHTML(); 
+});
+
+// Función para agregar un producto al carrito
 function addCart(id) {
   console.log(cart);
 
-  var nuevo = true; // Esto es como que asume que el producto es nuevo
+  var nuevo = true; 
 
   // Recorre el carrito para verificar si el producto ya existe
   for (var i = 0; i < cart.length; i++) {
     if (cart[i][0] == id) {
-      // Si el ID ya existe en el carrito entonces pues el producto no es nuevo kklsj
+      // Si el ID ya existe en el carrito entonces pues el producto no es nuevo kjdks
       console.log(cart[i][5]);
       nuevo = false;
-      cart[i][5] = cart[i][5] + 1; // Incrementa la cantidad del producto
+      cart[i][5] = cart[i][5] + 1; // Si el producto no es nuevo lo quee va a hace es incrementar la cantidad del producto
     }
   }
 
-  // Si el producto es nuevo, se extraen tipo sus datos y se añade al carrito
+  //Si el producto es nuevo, se extraen sus datos y se añade al carrito
   if (nuevo) {
     var id = productos[getIndex(id)][0];
     var imagen = productos[getIndex(id)][1];
@@ -48,11 +54,11 @@ function addCart(id) {
     var precio = productos[getIndex(id)][4];
     var cantidad = 1;
 
-    // Añade el producto al carrito
+    // Añade el producto al carrito de acuerdo a su id, imagen y todo a como esta en el array de productos
     cart.push([id, imagen, descuento, titulo, precio, cantidad]);
   }
 
-  // Muestra una alerta de éxito
+  // Muestra una alerta de que si se agrego un producto en el carrito 
   Swal.fire({
     title: "Agregaste un producto al carrito!",
     text: "Sigue comprando en KAVALEZA!",
@@ -61,12 +67,14 @@ function addCart(id) {
     },
   });
 
+  // Esto guarda el carrito actualizado en el localStorage
+  localStorage.setItem("cart", JSON.stringify(cart)); 
+
   showHTML(); // Muestra el contenido del carrito
-  console.log(cart);
+  console.log(cart); // esto solo era una prueba
 }
 
 // Función para obtener el índice de un producto de los productos
-
 function getIndex(id) {
   var result = -1; 
   for (var i = 0; i < productos.length; i++) {
@@ -80,7 +88,6 @@ function getIndex(id) {
 }
 
 // Función para eliminar un producto del carrito
-
 function removeCart(id) {
   console.log(cart);
 
@@ -94,6 +101,10 @@ function removeCart(id) {
 
   cart = cart2; // Actualiza el carrito
   console.log(cart); // Esto es una prueba
+
+  // Guardamos el carrito actualizado en localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+
   showHTML(); // Muestra el contenido actualizado del carrito
 }
 
@@ -137,7 +148,7 @@ const showHTML = () => {
                 <p class="titulo-producto-carrito">${product[3]}</p>
                 <span class="precio-producto-carrito">$${product[4]}</span>
             </div>
-            <img onclick="removeCart(${product[0]});" class="icon-close" src="imagenes/close.svg" alt="">
+            <img onclick="removeCart(${product[0]});" class="icon-close" src="imagenes/close.svg" alt="Eliminar">
         `;
 
     containerProduct2.innerHTML = `
@@ -186,7 +197,7 @@ function validarFormulario() {
       throw new Error("Necesitas llenar todos los campos para continuar tu compra de KAVALEZA.");
     }
 
-    // Valida el número de tarjeta que pueda ponerle espacios si gusta o si quiere ponelo corrido
+    // Valida el número de tarjeta que pueda ponerle espacios si gusta o si quiere ponerlo corrido
     const tarjetaPermitido = /^(\d{4}\s?){3}\d{4}$/; 
     if (!tarjetaPermitido.test(numeroTarjeta)) {
       throw new Error("El número de tarjeta debe tener 16 dígitos y puede tener espacios cada 4.");
@@ -211,6 +222,7 @@ function validarFormulario() {
     }).then(() => {
       // Vaciar el carrito SOLO si la compra fue exitosa
       cart = [];  // Vacía el carrito
+      localStorage.setItem("cart", JSON.stringify(cart)); // Guardamos el carrito vacío en localStorage
       showHTML();  // Actualiza la interfaz para reflejar que el carrito está vacío
     });
 
