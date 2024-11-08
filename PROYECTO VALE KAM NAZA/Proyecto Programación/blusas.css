@@ -759,3 +759,33 @@ hr {
 .boton:hover {
     background-color: #306f44; 
 }
+/* este es el contenedor donde caen las flores y los copos*/
+
+.contenedor-caida {
+    position: absolute; 
+    margin-top: 30px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 1000;
+}
+
+/* Estilo de cada flor y el copo básicamente son iguales con sus animaciones */
+.flor {
+    position: absolute;
+    animation: caer 5s linear infinite; 
+    will-change: transform; 
+    pointer-events: none; 
+    z-index: 100;
+}
+
+/* Animación de caída de las flores */
+@keyframes caer {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(100vh); 
+    }
+}

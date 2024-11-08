@@ -39,7 +39,7 @@ setInterval(crearFlorCayendo, 230);
 
 //Audio
 
-let audio = new Audio('audio-fondo.mp3'); 
+let audio = new Audio(''); 
 
     // Configuración del audio esto es para repetirlo infinitamente
     audio.loop = true; 

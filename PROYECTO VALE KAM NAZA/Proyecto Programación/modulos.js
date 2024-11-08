@@ -61,7 +61,7 @@ function editarProducto(id) {
 // Función para abrir el modal y preparar el formulario para agregar un nuevo producto
 function agregarProducto() {
 
-    // Limpiar los campos del formulario
+    // Limpiar los campos del formulario y el id es para que se ponga automatico 
 
     document.getElementById('idProducto').value = productos.length +1;
     document.getElementById('imagenProducto').value ="";
@@ -71,7 +71,7 @@ function agregarProducto() {
     document.getElementById('categoriaProducto').value ="";
     document.getElementById('imagenAdicional').value ="";
 
-    // Cambiar el título del modal a "Agregar Producto"
+    // esto es nada mas estetico para cuando uno abre el modal que salga el teto bien
     document.getElementById('modalProductoLabel').innerText = 'Agregar Producto';
     
     // Mostrar el modal
@@ -82,7 +82,7 @@ function agregarProducto() {
 
 
 
-
+// Esta es la funcion para guardar los cambios tanto de la agregar producto como la de editar
 function guardarCambios(event) {
 
     event.preventDefault(); // Prevenir que se recargue la página
@@ -111,7 +111,15 @@ function guardarCambios(event) {
         productoExistente[5] = categoria;
         productoExistente[6] = imagenAdicional;
 
-        alert("Producto actualizado");
+        Swal.fire({
+            title: 'Producto actualizado!',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+            customClass: {
+              confirmButton: 'alertbutton', 
+            }
+            
+          })
 
 
         localStorage.setItem('productos', JSON.stringify(productos));
@@ -122,16 +130,21 @@ function guardarCambios(event) {
         // Si el producto no existe, lo agregamos como nuevo
         const nuevoProducto = [parseInt(id), imagen, descuento, nombre, precio, categoria, imagenAdicional];
         productos.push(nuevoProducto);
-
-        alert("producto agregado");
+// sweet alert para mostrar si se agrego
+        Swal.fire({
+            title: 'Producto guardado!',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+            customClass: {
+              confirmButton: 'alertbutton', 
+            }
+            
+          })
         localStorage.setItem('productos', JSON.stringify(productos));
         console.log(productos);
     }
 
-    // **Guardar los cambios en localStorage** después de actualizar o agregar el producto
-    
-
-    // Recargar la tabla de productos
+    // Recargar la tabla de productos para que en el html se vea bien actualizado
     cargarProductos();
 
     // Cerrar el modal
@@ -147,6 +160,7 @@ function guardarCambios(event) {
 function eliminarProducto(id) {
     // Confirmar si el usuario está seguro de eliminar el producto
     const confirmar = confirm("¿Estás seguro de que quieres eliminar este producto?");
+    
     if (confirmar) {
         // Eliminar el producto del array
         productos = productos.filter(p => p[0] !== id);
@@ -156,7 +170,7 @@ function eliminarProducto(id) {
 
 
         alert("Producto eliminado con éxito.");
-        // Recargar la tabla
+        // recarga la tabla
         cargarProductos();
 
         
@@ -174,10 +188,10 @@ function eliminarProductosVacios() {
     // Filtrar los productos para eliminar aquellos que tienen campos vacíos
     productos = productos.filter(producto => {
         // Verificamos que el producto no tenga campos vacíos (por ejemplo, el ID no puede estar vacío)
-        return producto[0] && producto[3] && producto[4]; // Asegúrate de que los campos ID, nombre y precio no estén vacíos
+        return producto[0] && producto[3] && producto[4]; 
     });
 
-    // Actualizar el localStorage con el array de productos limpio
+    // Esto actualiza el localStorage con el array de productos limpio
     localStorage.setItem('productos', JSON.stringify(productos));
 
     // Recargar la tabla con los productos limpios
