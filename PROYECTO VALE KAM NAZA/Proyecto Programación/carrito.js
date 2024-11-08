@@ -220,10 +220,10 @@ function validarFormulario() {
       }
       
     }).then(() => {
-      // Vaciar el carrito SOLO si la compra fue exitosa
+      // Vaciar el carrito solo si la compra fue exitosa
       cart = [];  // Vacía el carrito
       localStorage.setItem("cart", JSON.stringify(cart)); // Guardamos el carrito vacío en localStorage
-      showHTML();  // Actualiza la interfaz para reflejar que el carrito está vacío
+      showHTML();  // luego lo actualiza
     });
 
   } catch (error) {

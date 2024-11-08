@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Función para buscar productos
+// Función para buscar productos con el icono busqueda 
 function buscarProducto() {
   const query = document.getElementById('entradaBusqueda').value.trim().toLowerCase();
   const contenedorResultados = document.getElementById('resultadosBusqueda');
@@ -260,33 +260,24 @@ function buscarProducto() {
               `;
               contenedorResultados.appendChild(item);
           });
-          contenedorResultados.classList.remove('oculto'); // Mostrar los resultados
+          contenedorResultados.classList.remove('oculto'); // Esto muestra los resultados
       } else {
           contenedorResultados.innerHTML += '<p>No se encontraron productos.</p>';
-          contenedorResultados.classList.remove('oculto'); // Mostrar los resultados
+          contenedorResultados.classList.remove('oculto'); 
       }
   } else {
       contenedorResultados.classList.add('oculto'); // Ocultar resultados si no hay búsqueda
   }
 
-  // Agregar el evento para cerrar el contenedor de resultados
+  // Esto nada más es para cerrar el contenedor de resultados
   document.getElementById('cerrarResultados').addEventListener('click', function() {
       contenedorResultados.classList.add('oculto'); // Ocultar los resultados
   });
 }
 
-// Mostrar el campo de búsqueda cuando se hace clic en el ícono
+// Esto es para mostrar el campo de búsqueda cuando se hace clic en el ícono
 document.getElementById('iconoBusqueda').addEventListener('click', function() {
   document.getElementById('entradaBusqueda').classList.toggle('mostrar');
 });
 
-// Cerrar el contenedor de resultados al hacer clic fuera de él
-document.addEventListener('click', function(event) {
-  const contenedorResultados = document.getElementById('resultadosBusqueda');
-  const entradaBusqueda = document.getElementById('entradaBusqueda');
-  
-  // Si el clic no es dentro del contenedor de resultados ni en el campo de búsqueda
-  if (!contenedorResultados.contains(event.target) && event.target !== entradaBusqueda) {
-      contenedorResultados.classList.add('oculto');
-  }
-});
+;

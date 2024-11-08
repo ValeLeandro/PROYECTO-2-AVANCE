@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Productos - Kavaleza</title>
+
+
+
+    <link rel="shorttcut icon" href="imagenes/logo-Photoroom.png">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="InyReg.css">
+    <script src="info.js"></script>
+    <script src="bootstrap.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="modulos.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+
+</head>
+<body>
+    <header>
+        <!-- inicio del menu y del header-->
+        <nav class="menudesplegable">
+            <div class="nav__container">
+                <!-- botón para abrir el menú -->
+                <a href="#menu" class="nav__menu">
+                    <img src="imagenes/menu.svg" class="nav_icon">
+                </a>
+                <!-- botón para cerrar el menú -->
+                <a href="#" class="nav__menu nav__menu--second">
+                    <img src="imagenes/close.svg" class="nav_icon">
+                </a>
+                <!-- lista desplegable del menú -->
+                <ul class="dropdown" id="menu">
+                    <li class="lista">
+                        <a href="blusas.html" class="dropdown__link">
+                            <span>Blusas</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="pantalones.html" class="dropdown__link">
+                            <span>Pantalones</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="vestidos.html" class="dropdown__link">
+                            <span>Vestidos</span>
+                        </a>
+                    </li>
+                    <li class="lista">
+                        <a href="zapatos.html" class="dropdown__link">
+                            <span>Zapatos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- título de la tienda -->
+        <div class="titulo"><h1>KAVALEZA</h1></div>
+
+        <!-- barra de iconos de navegación -->
+        <nav>
+            <div class="iconos">
+                <ul class="iconos_ul">
+                
+                    <div class="container_usuario">
+                        <li>
+                            <a class="usuario" href="iniciodsesion.html">
+                                <img src="imagenes/usuario (1).png" class="nav_icon" width="35px">
+                            </a>
+                        </li>
+                    </div>
+                    <!--Aqui comienza el carrito este es el contenedor-->
+                    <div class="container-icon">
+                        <div class="container-cart-icon">
+                            <img class="nav_icon" src="imagenes/carrito-de-compras (1).png" alt="">
+                        </div>
+                    
+                        
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+        <div class="container">
+            <h2>Consulta Rapida</h2>
+            <!-- Filtros  de precio, del stock y d categoria-->
+            <div class="filters">
+                <label for="stockFilter">Stock:</label>
+                <input type="number" id="stockFilter" placeholder="10 Articulos" min="0">
+    
+                <label for="categoryFilter">Categoría:</label>
+                <select id="categoryFilter">
+                    <option value="">Todas</option>
+                    <option value="zapatos">Zapatos</option>
+                    <option value="blusas">Blusas</option>
+                    <option value="vestidos">Vestidos</option>
+                    <option value="pantalones">Pantalones</option>
+                </select>
+    
+                <label for="priceFilter">Precio máximo:</label>
+                <input type="number" id="priceFilter" placeholder="35 dolares" min="0">
+                <!-- boton para aplicar los filtros-->
+                <button id="applyFilters">Aplicar</button>
+                <!-- Esto es para volver todo como estaba-->
+                <button id="clearFilters">Todo</button>
+            </div>
+    
+            <table id="product-table" class="product-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imagen</th>
+                        <th>Stock</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Categoría</th>
+                        <th>Modelo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    
+
+
+    <!--pie de pagina-->
+    <footer>
+        <div class="final">
+            <div class="footerlogo">
+                <img src="imagenes/image.png">
+            </div>
+            <!--redes sociales-->
+            <div class="footerredes">
+                <p>Síguenos en nuestras redes sociales</p>
+                <img src="imagenes/instagram (1).png" alt="insta">
+                <img src="imagenes/tik-tok.png" alt="">
+                <img src="imagenes/facebook.png" alt="">
+            </div>
+            <!--links para los terminos-->
+            <div class="footer-terminos">
+                <div><a href="terminos.html">Términos y Condiciones</a></div>
+                <div><a href="politica.html">Política de Privacidad</a></div>
+                
+            </div>
+        </div>
+            <div class="footer-info">
+                <p>&copy; 2024 Kavaleza. Todos los derechos reservados.</p>
+            </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="consultas.js"></script>
+</body>
+</html>

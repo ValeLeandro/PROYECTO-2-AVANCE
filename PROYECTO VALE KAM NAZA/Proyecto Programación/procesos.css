@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.botondeditar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(3, 27, 12);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+/* Estilo del contenedor */
+.contenedor-boton {
+    text-align: center; 
+    margin: 20px 0; 
+}
+
+/* Estilo del botón */
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(3, 27, 12);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px; 
+}
+
+.boton:hover {
+    background-color: beige;
+    color: rgb(3, 27, 12);
+    
+}
+
+
+
+/* Para el header */
+header {
+    text-align: center;
+    background-color: rgb(3, 27, 12); 
+    color: #fff;
+    padding: 25px 0;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Para el contenedor principal */
+.contenedor {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Titulo */
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+    color: rgb(3, 27, 12);
+}
+
+/* lista de órdenes */
+.lista-ordenes {
+    list-style: none;
+    padding: 0;
+}
+
+/* La vaina del orden */
+.orden {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 19px;
+    transition: all 0.3s ease;
+}
+
+.orden div {
+    flex-grow: 1;
+}
+
+.orden:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo del botón */
+.orden button {
+    background-color: rgb(3, 27, 12);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.orden button:hover {
+    background-color: #fff;
+    color: rgb(3, 27, 12);
+    border: 2px solid rgb(3, 27, 12);
+    transform: scale(1.05);
+}
+
+/* botones, fondos y detalles basicamente */
+.orden {
+    background-color: #faf1e6;
+    border-color: #e0d0b2;
+}
+
+.orden button {
+    background-color: rgb(3, 27, 12);
+    color: white;
+}
+
+.orden button:hover {
+    background-color: #e0d0b2; 
+    color: rgb(3, 27, 12);
+    border: 2px solid #e0d0b2;
+}
+
+/* formularios */
+form {
+    background-color: #faf1e6;  
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+form input, form select, form button {
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form select:focus, form button:focus {
+    border-color: rgb(3, 27, 12);  
+}
+
+/* Botón del formulario */
+form button {
+    background-color: rgb(3, 27, 12);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 19px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e0d0b2; /* cuando se pasa el mouse cambia */
+    color: rgb(3, 27, 12);
+}
+
+
+
+

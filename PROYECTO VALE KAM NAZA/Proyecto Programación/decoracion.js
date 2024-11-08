@@ -23,10 +23,10 @@ function crearFlorCayendo() {
     // Posicionar la flor aleatoriamente 
     flor.style.left = `${Math.random() * 100}%`;
 
-    // Añadir la flor al contenedor
+    // Esto nada más agrega la flor al contenedor
     document.querySelector('.contenedor-caida').appendChild(flor);
 
-    // Remover la flor después de que termine la animación
+    // Esto remueve la flor después de que termine la animación
     flor.addEventListener('animationiteration', () => {
         flor.remove();
     });
@@ -35,3 +35,22 @@ function crearFlorCayendo() {
 // Crear flores cada cierto tiempo, si uno pone muy poquito son un monton de flores y asi 
 setInterval(crearFlorCayendo, 230);
 
+
+
+//Audio
+
+let audio = new Audio('audio-fondo.mp3'); 
+
+    // Configuración del audio esto es para repetirlo infinitamente
+    audio.loop = true; 
+    audio.volume = 0.2; 
+
+    // Función para reproducir el audio
+    function playAudio() {
+        audio.play();  
+    }
+
+    // Función para pausar el audio
+    function pauseAudio() {
+        audio.pause();
+    }

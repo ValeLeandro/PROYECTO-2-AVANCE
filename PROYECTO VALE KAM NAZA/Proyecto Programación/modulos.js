@@ -1,9 +1,7 @@
 // Llamar a esta función cuando se cargan los productos o antes de agregar nuevos productos
 window.onload = function() {
-    eliminarProductosVacios();
     cargarProductos();
 };
-
 
 //Esto es para cargar todos los productos que estan en el js datos en la tabla de mantenimiento
 function cargarProductos() {
@@ -28,7 +26,6 @@ function cargarProductos() {
             <td>
                 <img class="icono" onclick="editarProducto(${producto[0]})" src="imagenes/boton-editar.png" alt="">
                 <img class="icono" onclick="eliminarProducto(${producto[0]})" src="imagenes/eliminar.png" alt="">
-                <img class="icono" onclick="eliminarProductosVacios()" src="imagenes/eliminar.png" alt="">
             </td>
         `;
 
@@ -50,14 +47,48 @@ function editarProducto(id) {
         document.getElementById('categoriaProducto').value = producto[5];
         document.getElementById('imagenAdicional').value = producto[6];
 
+          // Cambiar el título del modal 
+        document.getElementById('modalProductoLabel').innerText = 'Editar Producto';
+
         // Mostrar el modal de edición
         const modal = new bootstrap.Modal(document.getElementById('modalProducto'));
         modal.show();
     }
 }
 
-// Función para guardar los cambios de un producto
-function guardarCambiosProducto() {
+
+
+// Función para abrir el modal y preparar el formulario para agregar un nuevo producto
+function agregarProducto() {
+
+    // Limpiar los campos del formulario
+
+    document.getElementById('idProducto').value = productos.length +1;
+    document.getElementById('imagenProducto').value ="";
+    document.getElementById('nombreProducto').value ="";
+    document.getElementById('precioConDescuento').value ="";
+    document.getElementById('precioOriginal').value ="";
+    document.getElementById('categoriaProducto').value ="";
+    document.getElementById('imagenAdicional').value ="";
+
+    // Cambiar el título del modal a "Agregar Producto"
+    document.getElementById('modalProductoLabel').innerText = 'Agregar Producto';
+    
+    // Mostrar el modal
+    const modal = new bootstrap.Modal(document.getElementById('modalProducto'));
+    modal.show();
+}
+
+
+
+
+
+function guardarCambios(event) {
+
+    event.preventDefault(); // Prevenir que se recargue la página
+
+
+    // Obtener los valores de los campos del formulario
     const id = document.getElementById('idProducto').value;
     const imagen = document.getElementById('imagenProducto').value;
     const nombre = document.getElementById('nombreProducto').value;
@@ -66,76 +97,79 @@ function guardarCambiosProducto() {
     const categoria = document.getElementById('categoriaProducto').value;
     const imagenAdicional = document.getElementById('imagenAdicional').value;
 
-    // Encuentra el producto por id
-    const producto = productos.find(p => p[0] == id);
+    // Verificar si el producto ya existe
+    const productoExistente = productos.find(p => p[0] == id);
+    console.log(productos);
+    if (productoExistente !=null) {
+        // Si el producto ya existe, lo actualizamos
 
-    if (producto) {
-        // Actualiza las propiedades del producto
-        producto[1] = imagen; // Imagen
-        producto[3] = nombre; // Nombre
-        producto[2] = descuento; // Descuento
-        producto[4] = precio; // Precio 
-        producto[5] = categoria; // Categoría
-        producto[6] = imagenAdicional; // Imagen adicional
+        console.log("El producto si existe");
+        productoExistente[1] = imagen;
+        productoExistente[3] = nombre;
+        productoExistente[2] = descuento;
+        productoExistente[4] = precio;
+        productoExistente[5] = categoria;
+        productoExistente[6] = imagenAdicional;
 
-        // Actualizar el localStorage con el array de productos actualizado
+        alert("Producto actualizado");
+
+
         localStorage.setItem('productos', JSON.stringify(productos));
 
-        // Recargar la tabla con los productos actualizados
-        cargarProductos();
+        console.log(productos);
 
-        // Cerrar el modal de edición
-        const modal = bootstrap.Modal.getInstance(document.getElementById('modalProducto'));
-        modal.hide();
-    }
-}
-// Función para agregar un producto
-function agregarProducto() {
-    // Obtener los valores del formulario
-    const id = document.getElementById('idProducto').value;
-    const imagen = document.getElementById('imagenProducto').value;
-    const nombre = document.getElementById('nombreProducto').value;
-    const descuento = document.getElementById('Descuento').value;
-    const precio = document.getElementById('precio').value;
-    const categoria = document.getElementById('categoriaProducto').value;
-    const imagenAdicional = document.getElementById('imagenAdicional').value;
+    } else {
+        // Si el producto no existe, lo agregamos como nuevo
+        const nuevoProducto = [parseInt(id), imagen, descuento, nombre, precio, categoria, imagenAdicional];
+        productos.push(nuevoProducto);
 
-    // Validar que todos los campos requeridos estén llenos
-    if (!id || !imagen || !nombre || !descuento || !precio || !categoria) {
-        alert("Por favor completa todos los campos");
-        return; // Salir de la función si hay campos vacíos
+        alert("producto agregado");
+        localStorage.setItem('productos', JSON.stringify(productos));
+        console.log(productos);
     }
 
-    // Crear un nuevo producto
-    const nuevoProducto = [id, imagen, descuento, nombre, precio, categoria, imagenAdicional];
+    // **Guardar los cambios en localStorage** después de actualizar o agregar el producto
+    
 
-    productos.push(nuevoProducto);
-
-    // Actualizar el localStorage
-    localStorage.setItem('productos', JSON.stringify(productos));
-
+    // Recargar la tabla de productos
     cargarProductos();
 
     // Cerrar el modal
-    const modal = bootstrap.Modal.getInstance(document.getElementById('modalAgregarProducto'));
+    const modal = bootstrap.Modal.getInstance(document.getElementById('modalProducto'));
     modal.hide();
 }
 
+
+
+
+
 // Función para eliminar un producto
 function eliminarProducto(id) {
-    
-    productos = productos.filter(p => p[0] !== id);
-    console.log(productos);
-    // Actualizar el localStorage con el nuevo array de productos
+    // Confirmar si el usuario está seguro de eliminar el producto
+    const confirmar = confirm("¿Estás seguro de que quieres eliminar este producto?");
+    if (confirmar) {
+        // Eliminar el producto del array
+        productos = productos.filter(p => p[0] !== id);
+
+        // Guardar los cambios en el localStorage
+        localStorage.setItem('productos', JSON.stringify(productos));
 
 
-    localStorage.setItem('productos', JSON.stringify(productos));
+        alert("Producto eliminado con éxito.");
+        // Recargar la tabla
+        cargarProductos();
 
-    // Recarga la tabla con los productos actualizados
-    cargarProductos();
+        
+    }
 }
 
 
+
+
+
+
+
+//Profe no vea mucho esto, es que tuve como 300 problemas con campos vacios pero se pudo resolver:D
 function eliminarProductosVacios() {
     // Filtrar los productos para eliminar aquellos que tienen campos vacíos
     productos = productos.filter(producto => {
@@ -149,4 +183,6 @@ function eliminarProductosVacios() {
     // Recargar la tabla con los productos limpios
     cargarProductos();
 }
+
+
 

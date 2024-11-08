@@ -1,6 +1,6 @@
-var productos;
+var productos = JSON.parse(localStorage.getItem('productos')); // Esta es nuestra base de datos por así decirlo
 
-if (!productos || productos.length === 0) {
+if (!productos || productos.length === 0) {//Aqui es que si no estan seleccionados los datos que se muestre con los productos de ahi abajo
 
     productos =[
 [1,"imagenes objetos/zapato1.jfif","13","Tacones negros con detalles dorados",20,"zapatos","imagenes objetos/modelozapa1.jpeg"],
@@ -61,6 +61,10 @@ localStorage.setItem('productos', JSON.stringify(productos));
 
 
 
+function reiniciarProductos() {
 
+    localStorage.removeItem('productos');
+
+}
 
  

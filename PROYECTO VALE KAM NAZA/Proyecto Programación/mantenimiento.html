@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mantenimiento</title>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap.js"></script>
     <link rel="stylesheet" href="bootstrap.css">
     <script src="datos.js"></script>
     <link rel="stylesheet" href="modulos.css">
@@ -82,7 +81,8 @@
         <h2 class="productos">Gestión de Productos</h2>
     
         <!-- Botón para agregar un nuevo producto -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto">
+
+        <button type="button" onclick="agregarProducto()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto">
     Agregar Producto
 </button>
     
@@ -106,80 +106,35 @@
         </table>
     </div>
     
-    <!-- Modal para editar producto -->
-    <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalProductoLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header encabezado-modal">
-                    <h5 class="modal-title" id="modalProductoLabel">Editar Producto</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="formularioProducto">
-                        <div class="mb-3">
-                            <label for="idProducto" class="form-label">ID del Producto</label>
-                            <input type="text" class="form-control" id="idProducto">
-                        </div>
-                        <div class="mb-3">
-                            <label for="imagenProducto" class="form-label">Imagen del Producto</label>
-                            <input type="text" class="form-control" id="imagenProducto">
-                        </div>
-                        <div class="mb-3">
-                            <label for="nombreProducto" class="form-label">Titulo del Producto</label>
-                            <input type="text" class="form-control" id="nombreProducto" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="precioConDescuento" class="form-label">Descuento</label>
-                            <input type="number" class="form-control" id="precioConDescuento" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="precioOriginal" class="form-label">Precio</label>
-                            <input type="number" class="form-control" id="precioOriginal" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="categoriaProducto" class="form-label">Categoría</label>
-                            <input type="text" class="form-control" id="categoriaProducto" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="imagenAdicional" class="form-label">Imagen Adicional</label>
-                            <input type="text" class="form-control" id="imagenAdicional">
-                        </div>
-                        <input type="hidden" id="idProducto">
-                        <button type="submit" class="btn btn-primary" onclick="guardarCambiosProducto()" id="botonEnviar">Guardar Producto</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>    
-<!-- Modal para agregar producto -->
-<div class="modal fade" id="modalAgregarProducto" tabindex="-1" aria-labelledby="modalAgregarProductoLabel" aria-hidden="true">
+  <!-- Modal para editar/agregar producto -->
+<div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalProductoLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header encabezado-modal">
-                <h5 class="modal-title" id="modalAgregarProductoLabel">Agregar Producto</h5>
+                <h5 class="modal-title" id="modalProductoLabel">Editar Producto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="formularioAgregarProducto">
+                <form id="formularioProducto">
                     <div class="mb-3">
                         <label for="idProducto" class="form-label">ID del Producto</label>
-                        <input type="text" class="form-control" id="idProducto" required>
+                        <input type="text" class="form-control" id="idProducto" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="imagenProducto" class="form-label">Imagen del Producto</label>
-                        <input type="text" class="form-control" id="imagenProducto" required>
+                        <input type="text" class="form-control" id="imagenProducto">
                     </div>
                     <div class="mb-3">
                         <label for="nombreProducto" class="form-label">Título del Producto</label>
                         <input type="text" class="form-control" id="nombreProducto" required>
                     </div>
                     <div class="mb-3">
-                        <label for="Descuento" class="form-label">Descuento</label>
-                        <input type="number" class="form-control" id="Descuento" required>
+                        <label for="precioConDescuento" class="form-label">Descuento</label>
+                        <input type="number" class="form-control" id="precioConDescuento" required>
                     </div>
                     <div class="mb-3">
-                        <label for="precio" class="form-label">Precio</label>
-                        <input type="number" class="form-control" id="precio" required>
+                        <label for="precioOriginal" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="precioOriginal" required>
                     </div>
                     <div class="mb-3">
                         <label for="categoriaProducto" class="form-label">Categoría</label>
@@ -189,12 +144,12 @@
                         <label for="imagenAdicional" class="form-label">Imagen Adicional</label>
                         <input type="text" class="form-control" id="imagenAdicional">
                     </div>
-                    <input type="hidden" id="modo" value="agregar">
-                    <button type="button" class="btn btn-primary" onclick="agregarProducto()" id="botonAgregar">Guardar Producto</button>
+                    <button type="submit" onclick="guardarCambios(event)" class="btn btn-primary" id="botonEnviar">Guardar Producto</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
 </body>
 </html>

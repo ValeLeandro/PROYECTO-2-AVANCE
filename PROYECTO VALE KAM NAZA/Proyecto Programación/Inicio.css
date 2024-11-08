@@ -33,7 +33,7 @@ header {
 }
 /*contenedor del titulo de la página*/
 .titulo {
-    margin-left: 140px; 
+    margin-left: 340px; 
     font-size: 22px;
     color: bisque;
     text-align: center;
@@ -226,7 +226,7 @@ header {
     border-radius: 8px;
     box-shadow: 10px 7px 10px rgb(0,0,0,0.5);
 }
-
+/*Estilos de las imagenes*/
 .imagen1, .imagen2, .imagen3{
     width: 300px;
     height: 400px;
@@ -236,6 +236,7 @@ header {
     box-shadow: 0px 7px 10px rgb(0,0,0,0.5);
     transition: 0.5s ease-in-out;
 }
+/* Hover de las imagenes y su animación*/
 .imagen1:hover{
     transform: translateY(20px);
 }
@@ -245,6 +246,7 @@ header {
 .imagen3:hover{
     transform: translateY(20px);
 }
+
 .imagen1:before{
     content: "";
     position: absolute;
@@ -354,7 +356,7 @@ header {
     font-size: 15px;
     margin-bottom: 60px;
 }
-
+/* Contenedor productos aleatorios*/
 .productos-aleatorios {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -549,10 +551,10 @@ font-weight: 400;
     position: relative;
     top: 0;
     left: 0;
-    width: 1000px;
+    width: 90%;
     height: 450px;
+    margin-left: 5%;
     object-fit: cover;
-    margin-left: 15%;
     box-shadow: 0px 7px 10px rgb(0,0,0,0.5);
 }
 
@@ -929,7 +931,7 @@ hr {
     background-color: #306f44; 
 }
 
-
+/* este es el contenedor donde caen las flores y los copos*/
 
 .contenedor-caida {
     position: absolute; 
@@ -949,7 +951,7 @@ hr {
     pointer-events: none; 
     z-index: 10;
 }
-/* Estilo de cada flor con sus animaciones */
+/* Estilo de cada flor y el copo básicamente son iguales con sus animaciones */
 .flor {
     position: absolute;
     animation: caer 5s linear infinite; 
@@ -983,7 +985,7 @@ hr {
 #iconoBusqueda {
     cursor: pointer;
 }
-
+/* Estilos del Input de la busqueda */
 .inputBusqueda {
     padding: 8px;
     background-color: bisque;
@@ -1000,11 +1002,11 @@ hr {
     width: 200px; 
     opacity: 1;
 }
-
+/* Cuando esta oculto */ 
 .oculto {
     display: none;
 }
-
+/*El cuadro que sale a la hora de mostrar los resultados */
 .resultadosBusqueda {
     position: absolute;
     top: 100px;

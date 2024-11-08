@@ -3,7 +3,10 @@
 }
 /*estilos del cuerpo*/
 body {
-	background-color: beige;
+	background-image: url(imagenes/Beige\ Floral\ Wallpaper_\ A\ Timeless\ Choice\ For\ Elegant\ Interiors\ -\ Best\ Wallpaper\ HD.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-style: oblique;
 }

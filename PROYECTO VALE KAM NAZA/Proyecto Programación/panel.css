@@ -1,0 +1,40 @@
+
+.modulos {
+    margin: 0 auto;
+    background-color: rgb(3, 27, 12);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    max-width: 400px;
+
+}   
+
+/* titulo */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Son los botones */
+.boton {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    background-color: #e0d0b2;
+    color: rgb(3, 27, 12);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto en los botones (que cambien de color y asi) */
+.boton:hover {
+    background-color: rgb(3, 27, 12);
+    color: white;
+}
